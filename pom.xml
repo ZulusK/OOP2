@@ -8,8 +8,15 @@
     <packaging>jar</packaging>
 
     <name>OOPLabs2</name>
-    <url>http://maven.apache.org</url>
-
+    <url>https://github.com/ZulusK/OOPLabs2</url>
+    <developers>
+        <developer>
+            <id>ZulusK</id>
+            <name>Danil Kazimirov</name>
+            <email>danil.kazim.99@gmail.com</email>
+            <url>https://github.com/ZulusK/</url>
+        </developer>
+    </developers>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
@@ -20,6 +27,31 @@
     </properties>
     <build>
         <plugins>
+            <plugin>
+                <!-- Deploy the web site -->
+                <groupId>com.github.github</groupId>
+                <artifactId>site-maven-plugin</artifactId>
+                <version>0.12</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>site</goal>
+                        </goals>
+                        <!-- select the Maven phase in which the plugin will be executed -->
+                        <phase>site</phase>
+                        <configuration>
+                            <!-- Plugin configuration ges here -->
+                            <oauth2Token>${env.GITHUB_OAUTH_TOKEN}</oauth2Token>
+                            <repositoryName>${project.artifactId}</repositoryName>
+                            <repositoryOwner>ZulusK</repositoryOwner>
+                            <!-- The commit message -->
+                            <message>Building site for ${project.version}</message>
+                            <!-- Use merge or override the content -->
+                            <merge>true</merge>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
