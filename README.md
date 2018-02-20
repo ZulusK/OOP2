@@ -1,6 +1,8 @@
 # OOPLabs2
-![build status](https://travis-ci.org/ZulusK/OOPLabs2.svg?branch=master)
-![codecov](https://codecov.io/gh/ZulusK/OOPLabs2/branch/master/graph/badge.svg)
+[![Build Status](https://travis-ci.org/ZulusK/OOPLabs2.svg?branch=master)](https://travis-ci.org/ZulusK/OOPLabs2)
+[![codecov](https://codecov.io/gh/ZulusK/OOPLabs2/branch/master/graph/badge.svg)](https://codecov.io/gh/ZulusK/OOPLabs2)
+
+
 
 The repository stores the source code of laboratory works of `Object-oriented programing, second term`    
 > Teacher: Zabolotnaya Tatiana Nikolaevna KPI, FAM 2018    
