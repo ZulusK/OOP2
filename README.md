@@ -1,7 +1,8 @@
 # OOPLabs2
-[![Build Status](https://travis-ci.org/ZulusK/OOPLabs2.svg?branch=master)](https://travis-ci.org/ZulusK/OOPLabs2)
-[![codecov](https://codecov.io/gh/ZulusK/OOPLabs2/branch/master/graph/badge.svg)](https://codecov.io/gh/ZulusK/OOPLabs2)
-
+![badge-jdk-8]
+[![Build Status][ci-travis]](https://travis-ci.org/ZulusK/OOPLabs2)
+[![codecov][ci-codecov]](https://codecov.io/gh/ZulusK/OOPLabs2)
+![junit5-gradle-consumer][badge-junit-jupiter]
 
 
 The repository stores the source code of laboratory works of `Object-oriented programing, second term`    
@@ -27,3 +28,11 @@ the manager of a certain number of subordinate sellers, to whom he sells the goo
 Each manager sells cosmetics at a certain percentage more expensive than he
 she got it. But to exceed the final retail price of the product,
 the distributor has no right established by the company.
+
+
+[badge-jdk-8]: https://img.shields.io/badge/jdk-8-yellow.svg "JDK-8"
+[badge-tool-maven]: https://img.shields.io/badge/tool-maven-0440af.svg "Maven wrapper included"
+[badge-junit-jupiter]: https://img.shields.io/badge/junit-jupiter-green.svg "JUnit Jupiter Engine"
+
+[ci-codecov]: https://codecov.io/gh/ZulusK/OOPLabs2/branch/master/graph/badge.svg "Code coverage"
+[ci-travis]: https://travis-ci.org/ZulusK/OOPLabs2.svg?branch=master "Travis CI build status"
