@@ -21,6 +21,11 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.0.0</version>
+            </plugin>
+            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>
                 <version>2.7</version>
@@ -64,7 +69,6 @@
             </plugin>
         </plugins>
     </build>
-
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
