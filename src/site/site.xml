@@ -1,0 +1,38 @@
+<project>
+    <skin>
+        <groupId>lt.velykis.maven.skins</groupId>
+        <artifactId>reflow-maven-skin</artifactId>
+        <version>1.1.1</version>
+    </skin>
+    <custom>
+        <reflowSkin>
+            <theme>bootswatch-united</theme>
+        </reflowSkin>
+    </custom>
+    <bannerRight>
+        <name>Doxia</name>
+        <src>https://maven.apache.org/doxia/images/doxia-logo.png</src>
+        <href>https://maven.apache.org/doxia/</href>
+    </bannerRight>
+
+    <body>
+        <breadcrumbs>
+            <item name="Doxia" href="https://maven.apache.org/doxia/index.html" />
+            <item name="Doxia Sitetools" href="https://maven.apache.org/doxia/doxia-sitetools/index.html" />
+        </breadcrumbs>
+
+        <menu name="Overview">
+            <item name="Introduction" href="index.html"/>
+            <item name="JavaDocs" href="apidocs/index.html"/>
+            <item name="Source Xref" href="xref/index.html"/>
+            <!--item name="FAQ" href="faq.html"/-->
+            <!-- According to https://issues.apache.org/jira/browse/MNGSITE-152 -->
+            <item name="License" href="http://www.apache.org/licenses/"/>
+            <item name="Download" href="download.html"/>
+        </menu>
+
+        <menu ref="modules"/>
+
+        <menu ref="reports"/>
+    </body>
+</project>
