@@ -18,7 +18,7 @@
         <junit.vintage.version>${junit.version}.3</junit.vintage.version>
         <junit.platform.version>1.0.3</junit.platform.version>
     </properties>
-    <test>
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -32,10 +32,6 @@
                     <check/>
                 </configuration>
             </plugin>
-        </plugins>
-    </test>
-    <build>
-        <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.7.0</version>
