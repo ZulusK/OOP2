@@ -1,3 +1,10 @@
 language: java
-sudo: false
-script: mvn clean test
+sudo: false # faster builds
+jdk:
+- oraclejdk9
+install:
+- mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+script:
+- mvn test
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
