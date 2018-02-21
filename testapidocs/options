@@ -1,0 +1,28 @@
+-breakiterator
+-classpath
+'/home/travis/build/ZulusK/OOPLabs2/target/classes:/home/travis/build/ZulusK/OOPLabs2/target/test-classes:/home/travis/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.0.3/junit-jupiter-api-5.0.3.jar:/home/travis/.m2/repository/org/junit/vintage/junit-vintage-engine/4.12.3/junit-vintage-engine-4.12.3.jar:/home/travis/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/travis/.m2/repository/org/junit/platform/junit-platform-launcher/1.0.3/junit-platform-launcher-1.0.3.jar:/home/travis/.m2/repository/org/junit/platform/junit-platform-engine/1.0.3/junit-platform-engine-1.0.3.jar:/home/travis/.m2/repository/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar:/home/travis/.m2/repository/org/opentest4j/opentest4j/1.0.0/opentest4j-1.0.0.jar:/home/travis/.m2/repository/org/junit/platform/junit-platform-commons/1.0.3/junit-platform-commons-1.0.3.jar:/home/travis/.m2/repository/junit/junit/4.12/junit-4.12.jar:/home/travis/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.0.3/junit-jupiter-engine-5.0.3.jar'
+-encoding
+'UTF-8'
+-private
+-sourcepath
+'/home/travis/build/ZulusK/OOPLabs2/src/test/java'
+-author
+-bottom
+'Copyright &#169; 2018. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/home/travis/build/ZulusK/OOPLabs2/target/site/testapidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'OOPLabs2 1.0-SNAPSHOT Test API'
+-link
+'../apidocs'
+-linkoffline
+'http://docs.oracle.com/javase/7/docs/api' '/home/travis/build/ZulusK/OOPLabs2/target/javadoc-bundle-options'
+-linksource
+-use
+-version
+-windowtitle
+'OOPLabs2 1.0-SNAPSHOT Test API'
