@@ -1,6 +1,10 @@
 package zulus.lab1;
 
 import org.junit.jupiter.api.Test;
+import zulus.lab1.calc.AbstractCalculator;
+import zulus.lab1.calc.EngineerCalculator;
+import zulus.lab1.calc.InvalidCalcModeException;
+import zulus.lab1.calc.SimpleCalculator;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -19,25 +23,25 @@ class AbstractCalculatorTest {
 
     @Test
     void getCaluclator() {
-        assertTrue(simple.get_calculator() instanceof SimpleCalculator);
-        assertTrue(engineer.get_calculator() instanceof EngineerCalculator);
+        assertTrue(simple.getCalculator() instanceof SimpleCalculator);
+        assertTrue(engineer.getCalculator() instanceof EngineerCalculator);
     }
 
     @Test
     void setCalculator() {
         assertThrows(IllegalArgumentException.class, () -> {
-            simple.set_calculator(null);
+            simple.setCalculator(null);
         });
         SimpleCalculator SC = new SimpleCalculator();
         EngineerCalculator EC = new EngineerCalculator();
         AbstractCalculator AC = new AbstractCalculator(SC);
-        AC.set_calculator(EC);
+        AC.setCalculator(EC);
         assertAll(
                 () -> {
                     assertTrue(AC.isInEngineerMode());
                 },
                 () -> {
-                    assertEquals(AC.get_calculator(), EC);
+                    assertEquals(AC.getCalculator(), EC);
                 });
     }
 
@@ -89,6 +93,15 @@ class AbstractCalculatorTest {
         assertEquals(engineer.div(A, B), A / B, _delta);
     }
 
+    @Test
+    void simpleUnsupportedOperations() {
+        SimpleCalculator s = new SimpleCalculator();
+        assertAll(
+                () -> assertThrows(UnsupportedOperationException.class, () -> s.sqrt(10)),
+                () -> assertThrows(UnsupportedOperationException.class, () -> s.divByModulo(10, 1)),
+                () -> assertThrows(UnsupportedOperationException.class, () -> s.pow(10, 3))
+        );
+    }
 
     @Test
     void subtractSimple() {

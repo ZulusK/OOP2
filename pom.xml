@@ -25,7 +25,6 @@
         <junit.vintage.version>${junit.version}.3</junit.vintage.version>
         <junit.platform.version>1.0.3</junit.platform.version>
         <github.global.server>github</github.global.server>
-        <github.global.oauth2Token>${env.GITHUB_OAUTH_TOKEN}</github.global.oauth2Token>
         <github.global.repositoryName>${project.artifactId}</github.global.repositoryName>
     </properties>
     <build>
@@ -67,6 +66,7 @@
                 <artifactId>site-maven-plugin</artifactId>
                 <version>0.12</version>
                 <configuration>
+                    <oauth2Token>${env.GITHUB_OAUTH_TOKEN}</oauth2Token>
                     <message>Building site for ${project.version}</message>
                 </configuration>
                 <executions>
