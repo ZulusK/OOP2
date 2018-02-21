@@ -9,156 +9,169 @@
 <pre><span class="sourceLineNo">001</span>package zulus.lab1;<a name="line.1"></a>
 <span class="sourceLineNo">002</span><a name="line.2"></a>
 <span class="sourceLineNo">003</span>import org.junit.jupiter.api.Test;<a name="line.3"></a>
-<span class="sourceLineNo">004</span><a name="line.4"></a>
-<span class="sourceLineNo">005</span>import static org.junit.jupiter.api.Assertions.*;<a name="line.5"></a>
-<span class="sourceLineNo">006</span><a name="line.6"></a>
-<span class="sourceLineNo">007</span>/**<a name="line.7"></a>
-<span class="sourceLineNo">008</span> * Created by zulus on 21.02.18<a name="line.8"></a>
-<span class="sourceLineNo">009</span> */<a name="line.9"></a>
-<span class="sourceLineNo">010</span>class AbstractCalculatorTest {<a name="line.10"></a>
-<span class="sourceLineNo">011</span>    private double _delta = 1e-6;<a name="line.11"></a>
-<span class="sourceLineNo">012</span>    private AbstractCalculator simple;<a name="line.12"></a>
-<span class="sourceLineNo">013</span>    private AbstractCalculator engineer;<a name="line.13"></a>
-<span class="sourceLineNo">014</span><a name="line.14"></a>
-<span class="sourceLineNo">015</span>    AbstractCalculatorTest() {<a name="line.15"></a>
-<span class="sourceLineNo">016</span>        this.simple = new AbstractCalculator(new SimpleCalculator());<a name="line.16"></a>
-<span class="sourceLineNo">017</span>        this.engineer = new AbstractCalculator(new EngineerCalculator());<a name="line.17"></a>
-<span class="sourceLineNo">018</span>    }<a name="line.18"></a>
-<span class="sourceLineNo">019</span><a name="line.19"></a>
-<span class="sourceLineNo">020</span>    @Test<a name="line.20"></a>
-<span class="sourceLineNo">021</span>    void getCaluclator() {<a name="line.21"></a>
-<span class="sourceLineNo">022</span>        assertTrue(simple.get_calculator() instanceof SimpleCalculator);<a name="line.22"></a>
-<span class="sourceLineNo">023</span>        assertTrue(engineer.get_calculator() instanceof EngineerCalculator);<a name="line.23"></a>
-<span class="sourceLineNo">024</span>    }<a name="line.24"></a>
-<span class="sourceLineNo">025</span><a name="line.25"></a>
-<span class="sourceLineNo">026</span>    @Test<a name="line.26"></a>
-<span class="sourceLineNo">027</span>    void setCalculator() {<a name="line.27"></a>
-<span class="sourceLineNo">028</span>        assertThrows(IllegalArgumentException.class, () -&gt; {<a name="line.28"></a>
-<span class="sourceLineNo">029</span>            simple.set_calculator(null);<a name="line.29"></a>
-<span class="sourceLineNo">030</span>        });<a name="line.30"></a>
-<span class="sourceLineNo">031</span>        SimpleCalculator SC = new SimpleCalculator();<a name="line.31"></a>
-<span class="sourceLineNo">032</span>        EngineerCalculator EC = new EngineerCalculator();<a name="line.32"></a>
-<span class="sourceLineNo">033</span>        AbstractCalculator AC = new AbstractCalculator(SC);<a name="line.33"></a>
-<span class="sourceLineNo">034</span>        AC.set_calculator(EC);<a name="line.34"></a>
-<span class="sourceLineNo">035</span>        assertAll(<a name="line.35"></a>
-<span class="sourceLineNo">036</span>                () -&gt; {<a name="line.36"></a>
-<span class="sourceLineNo">037</span>                    assertTrue(AC.isInEngineerMode());<a name="line.37"></a>
-<span class="sourceLineNo">038</span>                },<a name="line.38"></a>
-<span class="sourceLineNo">039</span>                () -&gt; {<a name="line.39"></a>
-<span class="sourceLineNo">040</span>                    assertEquals(AC.get_calculator(), EC);<a name="line.40"></a>
-<span class="sourceLineNo">041</span>                });<a name="line.41"></a>
-<span class="sourceLineNo">042</span>    }<a name="line.42"></a>
-<span class="sourceLineNo">043</span><a name="line.43"></a>
-<span class="sourceLineNo">044</span>    @Test<a name="line.44"></a>
-<span class="sourceLineNo">045</span>    void testMode() {<a name="line.45"></a>
-<span class="sourceLineNo">046</span>        assertTrue(engineer.isInEngineerMode());<a name="line.46"></a>
-<span class="sourceLineNo">047</span>        assertFalse(simple.isInEngineerMode());<a name="line.47"></a>
-<span class="sourceLineNo">048</span>    }<a name="line.48"></a>
-<span class="sourceLineNo">049</span><a name="line.49"></a>
-<span class="sourceLineNo">050</span>    @Test<a name="line.50"></a>
-<span class="sourceLineNo">051</span>    void sumSimple() {<a name="line.51"></a>
-<span class="sourceLineNo">052</span>        int A = 5;<a name="line.52"></a>
-<span class="sourceLineNo">053</span>        int B = 3;<a name="line.53"></a>
-<span class="sourceLineNo">054</span>        assertEquals(simple.sum(A, B), A + B);<a name="line.54"></a>
-<span class="sourceLineNo">055</span>    }<a name="line.55"></a>
-<span class="sourceLineNo">056</span><a name="line.56"></a>
-<span class="sourceLineNo">057</span>    @Test<a name="line.57"></a>
-<span class="sourceLineNo">058</span>    void sumEngineer() {<a name="line.58"></a>
-<span class="sourceLineNo">059</span>        int A = 5;<a name="line.59"></a>
-<span class="sourceLineNo">060</span>        int B = 3;<a name="line.60"></a>
-<span class="sourceLineNo">061</span>        assertEquals(engineer.sum(A, B), A + B);<a name="line.61"></a>
-<span class="sourceLineNo">062</span>    }<a name="line.62"></a>
-<span class="sourceLineNo">063</span><a name="line.63"></a>
-<span class="sourceLineNo">064</span>    @Test<a name="line.64"></a>
-<span class="sourceLineNo">065</span>    void multiplyEngineer() {<a name="line.65"></a>
-<span class="sourceLineNo">066</span>        int A = 5;<a name="line.66"></a>
-<span class="sourceLineNo">067</span>        int B = 3;<a name="line.67"></a>
-<span class="sourceLineNo">068</span>        assertEquals(engineer.multiply(A, B), A * B);<a name="line.68"></a>
-<span class="sourceLineNo">069</span>    }<a name="line.69"></a>
-<span class="sourceLineNo">070</span><a name="line.70"></a>
-<span class="sourceLineNo">071</span>    @Test<a name="line.71"></a>
-<span class="sourceLineNo">072</span>    void multiplySimple() {<a name="line.72"></a>
-<span class="sourceLineNo">073</span>        int A = 5;<a name="line.73"></a>
-<span class="sourceLineNo">074</span>        int B = 3;<a name="line.74"></a>
-<span class="sourceLineNo">075</span>        assertEquals(simple.multiply(A, B), A * B);<a name="line.75"></a>
-<span class="sourceLineNo">076</span>    }<a name="line.76"></a>
-<span class="sourceLineNo">077</span><a name="line.77"></a>
-<span class="sourceLineNo">078</span>    @Test<a name="line.78"></a>
-<span class="sourceLineNo">079</span>    void divSimple() {<a name="line.79"></a>
-<span class="sourceLineNo">080</span>        double A = 5;<a name="line.80"></a>
-<span class="sourceLineNo">081</span>        double B = 3;<a name="line.81"></a>
-<span class="sourceLineNo">082</span>        assertEquals(simple.div(A, B), A / B, _delta);<a name="line.82"></a>
-<span class="sourceLineNo">083</span>    }<a name="line.83"></a>
-<span class="sourceLineNo">084</span><a name="line.84"></a>
-<span class="sourceLineNo">085</span>    @Test<a name="line.85"></a>
-<span class="sourceLineNo">086</span>    void divEngineer() {<a name="line.86"></a>
-<span class="sourceLineNo">087</span>        double A = 5;<a name="line.87"></a>
-<span class="sourceLineNo">088</span>        double B = 3;<a name="line.88"></a>
-<span class="sourceLineNo">089</span>        assertEquals(engineer.div(A, B), A / B, _delta);<a name="line.89"></a>
-<span class="sourceLineNo">090</span>    }<a name="line.90"></a>
-<span class="sourceLineNo">091</span><a name="line.91"></a>
-<span class="sourceLineNo">092</span><a name="line.92"></a>
-<span class="sourceLineNo">093</span>    @Test<a name="line.93"></a>
-<span class="sourceLineNo">094</span>    void subtractSimple() {<a name="line.94"></a>
-<span class="sourceLineNo">095</span>        int A = 5;<a name="line.95"></a>
-<span class="sourceLineNo">096</span>        int B = 3;<a name="line.96"></a>
-<span class="sourceLineNo">097</span>        assertEquals(simple.subtract(A, B), A - B);<a name="line.97"></a>
-<span class="sourceLineNo">098</span>    }<a name="line.98"></a>
-<span class="sourceLineNo">099</span><a name="line.99"></a>
-<span class="sourceLineNo">100</span>    @Test<a name="line.100"></a>
-<span class="sourceLineNo">101</span>    void subtractEngineer() {<a name="line.101"></a>
-<span class="sourceLineNo">102</span>        int A = 5;<a name="line.102"></a>
-<span class="sourceLineNo">103</span>        int B = 3;<a name="line.103"></a>
-<span class="sourceLineNo">104</span>        assertEquals(engineer.subtract(A, B), A - B);<a name="line.104"></a>
-<span class="sourceLineNo">105</span>    }<a name="line.105"></a>
-<span class="sourceLineNo">106</span><a name="line.106"></a>
-<span class="sourceLineNo">107</span>    @Test<a name="line.107"></a>
-<span class="sourceLineNo">108</span>    void sqrtSimple() {<a name="line.108"></a>
-<span class="sourceLineNo">109</span>        double A = 100;<a name="line.109"></a>
-<span class="sourceLineNo">110</span>        assertThrows(InvalidCalcModeException.class, () -&gt; {<a name="line.110"></a>
-<span class="sourceLineNo">111</span>            simple.sqrt(A);<a name="line.111"></a>
-<span class="sourceLineNo">112</span>        });<a name="line.112"></a>
-<span class="sourceLineNo">113</span><a name="line.113"></a>
-<span class="sourceLineNo">114</span>    }<a name="line.114"></a>
-<span class="sourceLineNo">115</span><a name="line.115"></a>
-<span class="sourceLineNo">116</span>    @Test<a name="line.116"></a>
-<span class="sourceLineNo">117</span>    void sqrtEngineer() {<a name="line.117"></a>
-<span class="sourceLineNo">118</span>        double A = 100;<a name="line.118"></a>
-<span class="sourceLineNo">119</span>        assertEquals(engineer.sqrt(A), Math.sqrt(A), _delta);<a name="line.119"></a>
-<span class="sourceLineNo">120</span>    }<a name="line.120"></a>
-<span class="sourceLineNo">121</span><a name="line.121"></a>
-<span class="sourceLineNo">122</span>    @Test<a name="line.122"></a>
-<span class="sourceLineNo">123</span>    void divByModuloSimple() {<a name="line.123"></a>
-<span class="sourceLineNo">124</span>        int A = 100;<a name="line.124"></a>
-<span class="sourceLineNo">125</span>        int B = 10;<a name="line.125"></a>
-<span class="sourceLineNo">126</span>        assertThrows(InvalidCalcModeException.class, () -&gt; {<a name="line.126"></a>
-<span class="sourceLineNo">127</span>            simple.divByModulo(A, B);<a name="line.127"></a>
-<span class="sourceLineNo">128</span>        });<a name="line.128"></a>
-<span class="sourceLineNo">129</span>    }<a name="line.129"></a>
-<span class="sourceLineNo">130</span><a name="line.130"></a>
-<span class="sourceLineNo">131</span>    @Test<a name="line.131"></a>
-<span class="sourceLineNo">132</span>    void divByModuloEngineer() {<a name="line.132"></a>
-<span class="sourceLineNo">133</span>        int A = 100;<a name="line.133"></a>
-<span class="sourceLineNo">134</span>        int B = 10;<a name="line.134"></a>
-<span class="sourceLineNo">135</span>        assertEquals(engineer.divByModulo(A, B), A % B);<a name="line.135"></a>
-<span class="sourceLineNo">136</span>    }<a name="line.136"></a>
-<span class="sourceLineNo">137</span><a name="line.137"></a>
-<span class="sourceLineNo">138</span>    @Test<a name="line.138"></a>
-<span class="sourceLineNo">139</span>    void powSimple() {<a name="line.139"></a>
-<span class="sourceLineNo">140</span>        int A = 100;<a name="line.140"></a>
-<span class="sourceLineNo">141</span>        int B = 10;<a name="line.141"></a>
-<span class="sourceLineNo">142</span>        assertThrows(InvalidCalcModeException.class, () -&gt; {<a name="line.142"></a>
-<span class="sourceLineNo">143</span>            simple.pow(A, B);<a name="line.143"></a>
-<span class="sourceLineNo">144</span>        });<a name="line.144"></a>
-<span class="sourceLineNo">145</span>    }<a name="line.145"></a>
-<span class="sourceLineNo">146</span><a name="line.146"></a>
-<span class="sourceLineNo">147</span>    @Test<a name="line.147"></a>
-<span class="sourceLineNo">148</span>    void powEngineer() {<a name="line.148"></a>
-<span class="sourceLineNo">149</span>        int A = 100;<a name="line.149"></a>
-<span class="sourceLineNo">150</span>        int B = 10;<a name="line.150"></a>
-<span class="sourceLineNo">151</span>        assertEquals(engineer.pow(A, B), Math.pow(A, B), _delta);<a name="line.151"></a>
-<span class="sourceLineNo">152</span>    }<a name="line.152"></a>
-<span class="sourceLineNo">153</span>}<a name="line.153"></a>
+<span class="sourceLineNo">004</span>import zulus.lab1.calc.AbstractCalculator;<a name="line.4"></a>
+<span class="sourceLineNo">005</span>import zulus.lab1.calc.EngineerCalculator;<a name="line.5"></a>
+<span class="sourceLineNo">006</span>import zulus.lab1.calc.InvalidCalcModeException;<a name="line.6"></a>
+<span class="sourceLineNo">007</span>import zulus.lab1.calc.SimpleCalculator;<a name="line.7"></a>
+<span class="sourceLineNo">008</span><a name="line.8"></a>
+<span class="sourceLineNo">009</span>import static org.junit.jupiter.api.Assertions.*;<a name="line.9"></a>
+<span class="sourceLineNo">010</span><a name="line.10"></a>
+<span class="sourceLineNo">011</span>/**<a name="line.11"></a>
+<span class="sourceLineNo">012</span> * Created by zulus on 21.02.18<a name="line.12"></a>
+<span class="sourceLineNo">013</span> */<a name="line.13"></a>
+<span class="sourceLineNo">014</span>class AbstractCalculatorTest {<a name="line.14"></a>
+<span class="sourceLineNo">015</span>    private double _delta = 1e-6;<a name="line.15"></a>
+<span class="sourceLineNo">016</span>    private AbstractCalculator simple;<a name="line.16"></a>
+<span class="sourceLineNo">017</span>    private AbstractCalculator engineer;<a name="line.17"></a>
+<span class="sourceLineNo">018</span><a name="line.18"></a>
+<span class="sourceLineNo">019</span>    AbstractCalculatorTest() {<a name="line.19"></a>
+<span class="sourceLineNo">020</span>        this.simple = new AbstractCalculator(new SimpleCalculator());<a name="line.20"></a>
+<span class="sourceLineNo">021</span>        this.engineer = new AbstractCalculator(new EngineerCalculator());<a name="line.21"></a>
+<span class="sourceLineNo">022</span>    }<a name="line.22"></a>
+<span class="sourceLineNo">023</span><a name="line.23"></a>
+<span class="sourceLineNo">024</span>    @Test<a name="line.24"></a>
+<span class="sourceLineNo">025</span>    void getCaluclator() {<a name="line.25"></a>
+<span class="sourceLineNo">026</span>        assertTrue(simple.getCalculator() instanceof SimpleCalculator);<a name="line.26"></a>
+<span class="sourceLineNo">027</span>        assertTrue(engineer.getCalculator() instanceof EngineerCalculator);<a name="line.27"></a>
+<span class="sourceLineNo">028</span>    }<a name="line.28"></a>
+<span class="sourceLineNo">029</span><a name="line.29"></a>
+<span class="sourceLineNo">030</span>    @Test<a name="line.30"></a>
+<span class="sourceLineNo">031</span>    void setCalculator() {<a name="line.31"></a>
+<span class="sourceLineNo">032</span>        assertThrows(IllegalArgumentException.class, () -&gt; {<a name="line.32"></a>
+<span class="sourceLineNo">033</span>            simple.setCalculator(null);<a name="line.33"></a>
+<span class="sourceLineNo">034</span>        });<a name="line.34"></a>
+<span class="sourceLineNo">035</span>        SimpleCalculator SC = new SimpleCalculator();<a name="line.35"></a>
+<span class="sourceLineNo">036</span>        EngineerCalculator EC = new EngineerCalculator();<a name="line.36"></a>
+<span class="sourceLineNo">037</span>        AbstractCalculator AC = new AbstractCalculator(SC);<a name="line.37"></a>
+<span class="sourceLineNo">038</span>        AC.setCalculator(EC);<a name="line.38"></a>
+<span class="sourceLineNo">039</span>        assertAll(<a name="line.39"></a>
+<span class="sourceLineNo">040</span>                () -&gt; {<a name="line.40"></a>
+<span class="sourceLineNo">041</span>                    assertTrue(AC.isInEngineerMode());<a name="line.41"></a>
+<span class="sourceLineNo">042</span>                },<a name="line.42"></a>
+<span class="sourceLineNo">043</span>                () -&gt; {<a name="line.43"></a>
+<span class="sourceLineNo">044</span>                    assertEquals(AC.getCalculator(), EC);<a name="line.44"></a>
+<span class="sourceLineNo">045</span>                });<a name="line.45"></a>
+<span class="sourceLineNo">046</span>    }<a name="line.46"></a>
+<span class="sourceLineNo">047</span><a name="line.47"></a>
+<span class="sourceLineNo">048</span>    @Test<a name="line.48"></a>
+<span class="sourceLineNo">049</span>    void testMode() {<a name="line.49"></a>
+<span class="sourceLineNo">050</span>        assertTrue(engineer.isInEngineerMode());<a name="line.50"></a>
+<span class="sourceLineNo">051</span>        assertFalse(simple.isInEngineerMode());<a name="line.51"></a>
+<span class="sourceLineNo">052</span>    }<a name="line.52"></a>
+<span class="sourceLineNo">053</span><a name="line.53"></a>
+<span class="sourceLineNo">054</span>    @Test<a name="line.54"></a>
+<span class="sourceLineNo">055</span>    void sumSimple() {<a name="line.55"></a>
+<span class="sourceLineNo">056</span>        int A = 5;<a name="line.56"></a>
+<span class="sourceLineNo">057</span>        int B = 3;<a name="line.57"></a>
+<span class="sourceLineNo">058</span>        assertEquals(simple.sum(A, B), A + B);<a name="line.58"></a>
+<span class="sourceLineNo">059</span>    }<a name="line.59"></a>
+<span class="sourceLineNo">060</span><a name="line.60"></a>
+<span class="sourceLineNo">061</span>    @Test<a name="line.61"></a>
+<span class="sourceLineNo">062</span>    void sumEngineer() {<a name="line.62"></a>
+<span class="sourceLineNo">063</span>        int A = 5;<a name="line.63"></a>
+<span class="sourceLineNo">064</span>        int B = 3;<a name="line.64"></a>
+<span class="sourceLineNo">065</span>        assertEquals(engineer.sum(A, B), A + B);<a name="line.65"></a>
+<span class="sourceLineNo">066</span>    }<a name="line.66"></a>
+<span class="sourceLineNo">067</span><a name="line.67"></a>
+<span class="sourceLineNo">068</span>    @Test<a name="line.68"></a>
+<span class="sourceLineNo">069</span>    void multiplyEngineer() {<a name="line.69"></a>
+<span class="sourceLineNo">070</span>        int A = 5;<a name="line.70"></a>
+<span class="sourceLineNo">071</span>        int B = 3;<a name="line.71"></a>
+<span class="sourceLineNo">072</span>        assertEquals(engineer.multiply(A, B), A * B);<a name="line.72"></a>
+<span class="sourceLineNo">073</span>    }<a name="line.73"></a>
+<span class="sourceLineNo">074</span><a name="line.74"></a>
+<span class="sourceLineNo">075</span>    @Test<a name="line.75"></a>
+<span class="sourceLineNo">076</span>    void multiplySimple() {<a name="line.76"></a>
+<span class="sourceLineNo">077</span>        int A = 5;<a name="line.77"></a>
+<span class="sourceLineNo">078</span>        int B = 3;<a name="line.78"></a>
+<span class="sourceLineNo">079</span>        assertEquals(simple.multiply(A, B), A * B);<a name="line.79"></a>
+<span class="sourceLineNo">080</span>    }<a name="line.80"></a>
+<span class="sourceLineNo">081</span><a name="line.81"></a>
+<span class="sourceLineNo">082</span>    @Test<a name="line.82"></a>
+<span class="sourceLineNo">083</span>    void divSimple() {<a name="line.83"></a>
+<span class="sourceLineNo">084</span>        double A = 5;<a name="line.84"></a>
+<span class="sourceLineNo">085</span>        double B = 3;<a name="line.85"></a>
+<span class="sourceLineNo">086</span>        assertEquals(simple.div(A, B), A / B, _delta);<a name="line.86"></a>
+<span class="sourceLineNo">087</span>    }<a name="line.87"></a>
+<span class="sourceLineNo">088</span><a name="line.88"></a>
+<span class="sourceLineNo">089</span>    @Test<a name="line.89"></a>
+<span class="sourceLineNo">090</span>    void divEngineer() {<a name="line.90"></a>
+<span class="sourceLineNo">091</span>        double A = 5;<a name="line.91"></a>
+<span class="sourceLineNo">092</span>        double B = 3;<a name="line.92"></a>
+<span class="sourceLineNo">093</span>        assertEquals(engineer.div(A, B), A / B, _delta);<a name="line.93"></a>
+<span class="sourceLineNo">094</span>    }<a name="line.94"></a>
+<span class="sourceLineNo">095</span><a name="line.95"></a>
+<span class="sourceLineNo">096</span>    @Test<a name="line.96"></a>
+<span class="sourceLineNo">097</span>    void simpleUnsupportedOperations() {<a name="line.97"></a>
+<span class="sourceLineNo">098</span>        SimpleCalculator s = new SimpleCalculator();<a name="line.98"></a>
+<span class="sourceLineNo">099</span>        assertAll(<a name="line.99"></a>
+<span class="sourceLineNo">100</span>                () -&gt; assertThrows(UnsupportedOperationException.class, () -&gt; s.sqrt(10)),<a name="line.100"></a>
+<span class="sourceLineNo">101</span>                () -&gt; assertThrows(UnsupportedOperationException.class, () -&gt; s.divByModulo(10, 1)),<a name="line.101"></a>
+<span class="sourceLineNo">102</span>                () -&gt; assertThrows(UnsupportedOperationException.class, () -&gt; s.pow(10, 3))<a name="line.102"></a>
+<span class="sourceLineNo">103</span>        );<a name="line.103"></a>
+<span class="sourceLineNo">104</span>    }<a name="line.104"></a>
+<span class="sourceLineNo">105</span><a name="line.105"></a>
+<span class="sourceLineNo">106</span>    @Test<a name="line.106"></a>
+<span class="sourceLineNo">107</span>    void subtractSimple() {<a name="line.107"></a>
+<span class="sourceLineNo">108</span>        int A = 5;<a name="line.108"></a>
+<span class="sourceLineNo">109</span>        int B = 3;<a name="line.109"></a>
+<span class="sourceLineNo">110</span>        assertEquals(simple.subtract(A, B), A - B);<a name="line.110"></a>
+<span class="sourceLineNo">111</span>    }<a name="line.111"></a>
+<span class="sourceLineNo">112</span><a name="line.112"></a>
+<span class="sourceLineNo">113</span>    @Test<a name="line.113"></a>
+<span class="sourceLineNo">114</span>    void subtractEngineer() {<a name="line.114"></a>
+<span class="sourceLineNo">115</span>        int A = 5;<a name="line.115"></a>
+<span class="sourceLineNo">116</span>        int B = 3;<a name="line.116"></a>
+<span class="sourceLineNo">117</span>        assertEquals(engineer.subtract(A, B), A - B);<a name="line.117"></a>
+<span class="sourceLineNo">118</span>    }<a name="line.118"></a>
+<span class="sourceLineNo">119</span><a name="line.119"></a>
+<span class="sourceLineNo">120</span>    @Test<a name="line.120"></a>
+<span class="sourceLineNo">121</span>    void sqrtSimple() {<a name="line.121"></a>
+<span class="sourceLineNo">122</span>        double A = 100;<a name="line.122"></a>
+<span class="sourceLineNo">123</span>        assertThrows(InvalidCalcModeException.class, () -&gt; {<a name="line.123"></a>
+<span class="sourceLineNo">124</span>            simple.sqrt(A);<a name="line.124"></a>
+<span class="sourceLineNo">125</span>        });<a name="line.125"></a>
+<span class="sourceLineNo">126</span><a name="line.126"></a>
+<span class="sourceLineNo">127</span>    }<a name="line.127"></a>
+<span class="sourceLineNo">128</span><a name="line.128"></a>
+<span class="sourceLineNo">129</span>    @Test<a name="line.129"></a>
+<span class="sourceLineNo">130</span>    void sqrtEngineer() {<a name="line.130"></a>
+<span class="sourceLineNo">131</span>        double A = 100;<a name="line.131"></a>
+<span class="sourceLineNo">132</span>        assertEquals(engineer.sqrt(A), Math.sqrt(A), _delta);<a name="line.132"></a>
+<span class="sourceLineNo">133</span>    }<a name="line.133"></a>
+<span class="sourceLineNo">134</span><a name="line.134"></a>
+<span class="sourceLineNo">135</span>    @Test<a name="line.135"></a>
+<span class="sourceLineNo">136</span>    void divByModuloSimple() {<a name="line.136"></a>
+<span class="sourceLineNo">137</span>        int A = 100;<a name="line.137"></a>
+<span class="sourceLineNo">138</span>        int B = 10;<a name="line.138"></a>
+<span class="sourceLineNo">139</span>        assertThrows(InvalidCalcModeException.class, () -&gt; {<a name="line.139"></a>
+<span class="sourceLineNo">140</span>            simple.divByModulo(A, B);<a name="line.140"></a>
+<span class="sourceLineNo">141</span>        });<a name="line.141"></a>
+<span class="sourceLineNo">142</span>    }<a name="line.142"></a>
+<span class="sourceLineNo">143</span><a name="line.143"></a>
+<span class="sourceLineNo">144</span>    @Test<a name="line.144"></a>
+<span class="sourceLineNo">145</span>    void divByModuloEngineer() {<a name="line.145"></a>
+<span class="sourceLineNo">146</span>        int A = 100;<a name="line.146"></a>
+<span class="sourceLineNo">147</span>        int B = 10;<a name="line.147"></a>
+<span class="sourceLineNo">148</span>        assertEquals(engineer.divByModulo(A, B), A % B);<a name="line.148"></a>
+<span class="sourceLineNo">149</span>    }<a name="line.149"></a>
+<span class="sourceLineNo">150</span><a name="line.150"></a>
+<span class="sourceLineNo">151</span>    @Test<a name="line.151"></a>
+<span class="sourceLineNo">152</span>    void powSimple() {<a name="line.152"></a>
+<span class="sourceLineNo">153</span>        int A = 100;<a name="line.153"></a>
+<span class="sourceLineNo">154</span>        int B = 10;<a name="line.154"></a>
+<span class="sourceLineNo">155</span>        assertThrows(InvalidCalcModeException.class, () -&gt; {<a name="line.155"></a>
+<span class="sourceLineNo">156</span>            simple.pow(A, B);<a name="line.156"></a>
+<span class="sourceLineNo">157</span>        });<a name="line.157"></a>
+<span class="sourceLineNo">158</span>    }<a name="line.158"></a>
+<span class="sourceLineNo">159</span><a name="line.159"></a>
+<span class="sourceLineNo">160</span>    @Test<a name="line.160"></a>
+<span class="sourceLineNo">161</span>    void powEngineer() {<a name="line.161"></a>
+<span class="sourceLineNo">162</span>        int A = 100;<a name="line.162"></a>
+<span class="sourceLineNo">163</span>        int B = 10;<a name="line.163"></a>
+<span class="sourceLineNo">164</span>        assertEquals(engineer.pow(A, B), Math.pow(A, B), _delta);<a name="line.164"></a>
+<span class="sourceLineNo">165</span>    }<a name="line.165"></a>
+<span class="sourceLineNo">166</span>}<a name="line.166"></a>
 
 
 
