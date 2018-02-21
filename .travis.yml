@@ -6,5 +6,5 @@ script:
 - mvn cobertura:cobertura
 after_success:
   - mvn clean cobertura:cobertura coveralls:cobertura
-  - mvn clean site -X
   - bash <(curl -s https://codecov.io/bash)
+#  - mvn clean site -X
