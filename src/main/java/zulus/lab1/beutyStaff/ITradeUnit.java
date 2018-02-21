@@ -35,7 +35,6 @@ public interface ITradeUnit {
      * set extra charge of this employee
      *
      * @param value new value of extra charge of this unit
-     * @return value of extra charge of current employee
      */
     void setExtraCharge(double value);
 

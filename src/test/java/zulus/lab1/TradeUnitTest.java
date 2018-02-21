@@ -112,6 +112,7 @@ public class TradeUnitTest {
         Product P = new Product(100, 200, "Book");
         assertFalse(M.sell(P));
         M.add(new Seller("Bill", 0.03));
+        System.out.println("=========================================================");
         assertTrue(M.sell(P));
         assertThrows(IllegalArgumentException.class, () -> M.sell(null));
     }
@@ -141,5 +142,19 @@ public class TradeUnitTest {
         subM1.add(s3);
         System.out.println("=========================================================");
         assertTrue(MainM.sell(P));
+    }
+
+    @Test
+    void SellProductWithZeroGain() {
+        Product P = new Product(100, 101, "PC");
+        Manager M = new Manager("Harry", 0.1);
+        Manager subM = new Manager("Joe", 0.3);
+        Seller s1 = new Seller("Dominic", 0.4);
+        Seller s2 = new Seller("Ron", 0.35);
+        M.add(s1);
+        M.add(subM);
+        subM.add(s2);
+        System.out.println("=========================================================");
+        assertTrue(M.sell(P));
     }
 }
