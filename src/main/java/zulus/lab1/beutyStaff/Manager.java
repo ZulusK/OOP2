@@ -5,6 +5,10 @@ import java.util.HashSet;
 /**
  * Created by zulus on 21.02.18
  */
+
+/**
+ * Defines manager of trading company
+ */
 public class Manager implements ITradeUnit {
     double _extraCharge;
     String _name;

@@ -4,6 +4,10 @@ package zulus.lab1.beutyStaff;
 /**
  * Created by zulus on 21.02.18
  */
+
+/**
+ * Defines seller of trading company
+ */
 public class Seller implements ITradeUnit {
     double _extraCharge;
     String _name;
