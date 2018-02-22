@@ -1,0 +1,1020 @@
+<?xml version="1.0"?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+
+<coverage line-rate="0.9770114942528736" branch-rate="0.8448275862068966" lines-covered="170" lines-valid="174" branches-covered="49" branches-valid="58" complexity="1.6494845360824741" version="2.1.1" timestamp="1519299129081">
+	<sources>
+		<source>/home/travis/build/ZulusK/OOPLabs2/src/main/java</source>
+		<source>/home/travis/build/ZulusK/OOPLabs2/target/generated-sources/annotations</source>
+		<source>--source</source>
+	</sources>
+	<packages>
+		<package name="zulus.lab1.beutyStaff" line-rate="0.9506172839506173" branch-rate="0.7941176470588235" complexity="1.9210526315789473">
+			<classes>
+				<class name="zulus.lab1.beutyStaff.ITradeUnit" filename="zulus/lab1/beutyStaff/ITradeUnit.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="zulus.lab1.beutyStaff.Manager" filename="zulus/lab1/beutyStaff/Manager.java" line-rate="0.9444444444444444" branch-rate="0.8888888888888888" complexity="2.5454545454545454">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;D)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="23" hits="10" branch="false"/>
+								<line number="24" hits="10" branch="false"/>
+								<line number="25" hits="9" branch="false"/>
+								<line number="26" hits="9" branch="false"/>
+								<line number="27" hits="9" branch="false"/>
+							</lines>
+						</method>
+						<method name="add" signature="(Lzulus/lab1/beutyStaff/ITradeUnit;)Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="52" hits="16" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="53" hits="15" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="54" hits="14" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCurrentCost" signature="(Lzulus/lab1/beutyStaff/Product;D)D" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="95" hits="5" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCurrentExtraCharge" signature="(DD)D" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="90" hits="5" branch="false"/>
+								<line number="91" hits="5" branch="false"/>
+							</lines>
+						</method>
+						<method name="getExtraCharge" signature="()D" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="31" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="getName" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="47" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="remove" signature="(Lzulus/lab1/beutyStaff/ITradeUnit;)Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="59" hits="3" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="60" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="sell" signature="(Lzulus/lab1/beutyStaff/Product;)Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="65" hits="5" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="66" hits="1" branch="false"/>
+								<line number="67" hits="4" branch="false"/>
+							</lines>
+						</method>
+						<method name="sell" signature="(Lzulus/lab1/beutyStaff/Product;DI)Z" line-rate="0.8461538461538461" branch-rate="0.75" complexity="0">
+							<lines>
+								<line number="72" hits="7" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="73" hits="0" branch="false"/>
+								<line number="74" hits="7" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="75" hits="0" branch="false"/>
+								<line number="76" hits="7" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="77" hits="2" branch="false"/>
+								<line number="78" hits="2" branch="false"/>
+								<line number="80" hits="5" branch="false"/>
+								<line number="81" hits="5" branch="false"/>
+								<line number="82" hits="5" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="83" hits="9" branch="false"/>
+								<line number="84" hits="9" branch="false"/>
+								<line number="85" hits="5" branch="false"/>
+							</lines>
+						</method>
+						<method name="setExtraCharge" signature="(D)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="36" hits="10" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="37" hits="9" branch="false"/>
+								<line number="38" hits="9" branch="false"/>
+							</lines>
+						</method>
+						<method name="setName" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="42" hits="9" branch="false"/>
+								<line number="43" hits="9" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="23" hits="10" branch="false"/>
+						<line number="24" hits="10" branch="false"/>
+						<line number="25" hits="9" branch="false"/>
+						<line number="26" hits="9" branch="false"/>
+						<line number="27" hits="9" branch="false"/>
+						<line number="31" hits="1" branch="false"/>
+						<line number="36" hits="10" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="37" hits="9" branch="false"/>
+						<line number="38" hits="9" branch="false"/>
+						<line number="42" hits="9" branch="false"/>
+						<line number="43" hits="9" branch="false"/>
+						<line number="47" hits="1" branch="false"/>
+						<line number="52" hits="16" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="53" hits="15" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="54" hits="14" branch="false"/>
+						<line number="59" hits="3" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="60" hits="2" branch="false"/>
+						<line number="65" hits="5" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="66" hits="1" branch="false"/>
+						<line number="67" hits="4" branch="false"/>
+						<line number="72" hits="7" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="73" hits="0" branch="false"/>
+						<line number="74" hits="7" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="75" hits="0" branch="false"/>
+						<line number="76" hits="7" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="77" hits="2" branch="false"/>
+						<line number="78" hits="2" branch="false"/>
+						<line number="80" hits="5" branch="false"/>
+						<line number="81" hits="5" branch="false"/>
+						<line number="82" hits="5" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="83" hits="9" branch="false"/>
+						<line number="84" hits="9" branch="false"/>
+						<line number="85" hits="5" branch="false"/>
+						<line number="90" hits="5" branch="false"/>
+						<line number="91" hits="5" branch="false"/>
+						<line number="95" hits="5" branch="false"/>
+					</lines>
+				</class>
+				<class name="zulus.lab1.beutyStaff.Product" filename="zulus/lab1/beutyStaff/Product.java" line-rate="1.0" branch-rate="0.625" complexity="2.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="(DDLjava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="22" hits="6" branch="false"/>
+								<line number="24" hits="6" branch="false"/>
+								<line number="25" hits="6" branch="false"/>
+								<line number="26" hits="5" branch="false"/>
+								<line number="27" hits="5" branch="false"/>
+							</lines>
+						</method>
+						<method name="getMaxCost" signature="()D" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="35" hits="13" branch="false"/>
+							</lines>
+						</method>
+						<method name="getMinCost" signature="()D" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="44" hits="20" branch="false"/>
+							</lines>
+						</method>
+						<method name="getName" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="75" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="setMaxCost" signature="(D)V" line-rate="1.0" branch-rate="0.5" complexity="0">
+							<lines>
+								<line number="64" hits="6" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="65" hits="6" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="66" hits="6" branch="false"/>
+								<line number="67" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="setMinCost" signature="(D)V" line-rate="1.0" branch-rate="0.75" complexity="0">
+							<lines>
+								<line number="53" hits="6" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="54" hits="6" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="55" hits="5" branch="false"/>
+								<line number="56" hits="5" branch="false"/>
+							</lines>
+						</method>
+						<method name="setName" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="84" hits="5" branch="false"/>
+								<line number="85" hits="5" branch="false"/>
+							</lines>
+						</method>
+						<method name="toString" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="89" hits="14" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="22" hits="6" branch="false"/>
+						<line number="24" hits="6" branch="false"/>
+						<line number="25" hits="6" branch="false"/>
+						<line number="26" hits="5" branch="false"/>
+						<line number="27" hits="5" branch="false"/>
+						<line number="35" hits="13" branch="false"/>
+						<line number="44" hits="20" branch="false"/>
+						<line number="53" hits="6" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="54" hits="6" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="55" hits="5" branch="false"/>
+						<line number="56" hits="5" branch="false"/>
+						<line number="64" hits="6" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="65" hits="6" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="66" hits="6" branch="false"/>
+						<line number="67" hits="6" branch="false"/>
+						<line number="75" hits="1" branch="false"/>
+						<line number="84" hits="5" branch="false"/>
+						<line number="85" hits="5" branch="false"/>
+						<line number="89" hits="14" branch="false"/>
+					</lines>
+				</class>
+				<class name="zulus.lab1.beutyStaff.Seller" filename="zulus/lab1/beutyStaff/Seller.java" line-rate="0.9230769230769231" branch-rate="0.75" complexity="1.9090909090909092">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;D)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="21" hits="15" branch="false"/>
+								<line number="22" hits="15" branch="false"/>
+								<line number="23" hits="14" branch="false"/>
+								<line number="24" hits="14" branch="false"/>
+							</lines>
+						</method>
+						<method name="add" signature="(Lzulus/lab1/beutyStaff/ITradeUnit;)Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="49" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCurrentCost" signature="(Lzulus/lab1/beutyStaff/Product;D)D" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="82" hits="7" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCurrentExtraCharge" signature="(DD)D" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="77" hits="7" branch="false"/>
+								<line number="78" hits="7" branch="false"/>
+							</lines>
+						</method>
+						<method name="getExtraCharge" signature="()D" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="28" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="getName" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="44" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="remove" signature="(Lzulus/lab1/beutyStaff/ITradeUnit;)Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="54" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="sell" signature="(Lzulus/lab1/beutyStaff/Product;)Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="59" hits="2" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="60" hits="1" branch="false"/>
+								<line number="61" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="sell" signature="(Lzulus/lab1/beutyStaff/Product;DI)Z" line-rate="0.7142857142857143" branch-rate="0.5" complexity="0">
+							<lines>
+								<line number="66" hits="7" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="67" hits="0" branch="false"/>
+								<line number="68" hits="7" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="69" hits="0" branch="false"/>
+								<line number="71" hits="7" branch="false"/>
+								<line number="72" hits="7" branch="false"/>
+								<line number="73" hits="7" branch="false"/>
+							</lines>
+						</method>
+						<method name="setExtraCharge" signature="(D)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="33" hits="15" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="34" hits="14" branch="false"/>
+								<line number="35" hits="14" branch="false"/>
+							</lines>
+						</method>
+						<method name="setName" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="39" hits="14" branch="false"/>
+								<line number="40" hits="14" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="21" hits="15" branch="false"/>
+						<line number="22" hits="15" branch="false"/>
+						<line number="23" hits="14" branch="false"/>
+						<line number="24" hits="14" branch="false"/>
+						<line number="28" hits="1" branch="false"/>
+						<line number="33" hits="15" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="34" hits="14" branch="false"/>
+						<line number="35" hits="14" branch="false"/>
+						<line number="39" hits="14" branch="false"/>
+						<line number="40" hits="14" branch="false"/>
+						<line number="44" hits="1" branch="false"/>
+						<line number="49" hits="1" branch="false"/>
+						<line number="54" hits="1" branch="false"/>
+						<line number="59" hits="2" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="60" hits="1" branch="false"/>
+						<line number="61" hits="1" branch="false"/>
+						<line number="66" hits="7" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="67" hits="0" branch="false"/>
+						<line number="68" hits="7" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="69" hits="0" branch="false"/>
+						<line number="71" hits="7" branch="false"/>
+						<line number="72" hits="7" branch="false"/>
+						<line number="73" hits="7" branch="false"/>
+						<line number="77" hits="7" branch="false"/>
+						<line number="78" hits="7" branch="false"/>
+						<line number="82" hits="7" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="zulus.lab1.calc" line-rate="1.0" branch-rate="0.9" complexity="1.4848484848484849">
+			<classes>
+				<class name="zulus.lab1.calc.AbstractCalculator" filename="zulus/lab1/calc/AbstractCalculator.java" line-rate="1.0" branch-rate="0.9" complexity="2.1818181818181817">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lzulus/lab1/calc/ICalculator;)V" line-rate="1.0" branch-rate="0.5" complexity="0">
+							<lines>
+								<line number="37" hits="37" branch="false"/>
+								<line number="38" hits="37" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="39" hits="37" branch="false"/>
+								<line number="40" hits="37" branch="false"/>
+							</lines>
+						</method>
+						<method name="div" signature="(DD)D" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="72" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="divByModulo" signature="(II)I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="108" hits="2" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="109" hits="1" branch="false"/>
+								<line number="111" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCalculator" signature="()Lzulus/lab1/calc/ICalculator;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="19" hits="3" branch="false"/>
+							</lines>
+						</method>
+						<method name="isInEngineerMode" signature="()Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="136" hits="9" branch="false"/>
+							</lines>
+						</method>
+						<method name="multiply" signature="(II)J" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="61" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="pow" signature="(DD)D" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="123" hits="2" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="124" hits="1" branch="false"/>
+								<line number="126" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="setCalculator" signature="(Lzulus/lab1/calc/ICalculator;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="28" hits="2" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="29" hits="1" branch="false"/>
+								<line number="30" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="sqrt" signature="(D)D" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="93" hits="2" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="94" hits="1" branch="false"/>
+								<line number="96" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="subtract" signature="(II)I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="83" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="sum" signature="(II)I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="50" hits="2" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="19" hits="3" branch="false"/>
+						<line number="28" hits="2" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="29" hits="1" branch="false"/>
+						<line number="30" hits="1" branch="false"/>
+						<line number="37" hits="37" branch="false"/>
+						<line number="38" hits="37" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="39" hits="37" branch="false"/>
+						<line number="40" hits="37" branch="false"/>
+						<line number="50" hits="2" branch="false"/>
+						<line number="61" hits="2" branch="false"/>
+						<line number="72" hits="2" branch="false"/>
+						<line number="83" hits="2" branch="false"/>
+						<line number="93" hits="2" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="94" hits="1" branch="false"/>
+						<line number="96" hits="1" branch="false"/>
+						<line number="108" hits="2" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="109" hits="1" branch="false"/>
+						<line number="111" hits="1" branch="false"/>
+						<line number="123" hits="2" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="124" hits="1" branch="false"/>
+						<line number="126" hits="1" branch="false"/>
+						<line number="136" hits="9" branch="false"/>
+					</lines>
+				</class>
+				<class name="zulus.lab1.calc.EngineerCalculator" filename="zulus/lab1/calc/EngineerCalculator.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="12" hits="19" branch="false"/>
+							</lines>
+						</method>
+						<method name="div" signature="(DD)D" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="26" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="divByModulo" signature="(II)I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="41" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="multiply" signature="(II)J" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="21" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="pow" signature="(DD)D" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="46" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="sqrt" signature="(D)D" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="36" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="subtract" signature="(II)I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="31" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="sum" signature="(II)I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="16" hits="1" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="12" hits="19" branch="false"/>
+						<line number="16" hits="1" branch="false"/>
+						<line number="21" hits="1" branch="false"/>
+						<line number="26" hits="1" branch="false"/>
+						<line number="31" hits="1" branch="false"/>
+						<line number="36" hits="1" branch="false"/>
+						<line number="41" hits="1" branch="false"/>
+						<line number="46" hits="1" branch="false"/>
+					</lines>
+				</class>
+				<class name="zulus.lab1.calc.ICalculator" filename="zulus/lab1/calc/ICalculator.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="zulus.lab1.calc.InvalidCalcModeException" filename="zulus/lab1/calc/InvalidCalcModeException.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="9" hits="3" branch="false"/>
+								<line number="10" hits="3" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="9" hits="3" branch="false"/>
+						<line number="10" hits="3" branch="false"/>
+					</lines>
+				</class>
+				<class name="zulus.lab1.calc.SimpleCalculator" filename="zulus/lab1/calc/SimpleCalculator.java" line-rate="1.0" branch-rate="1.0" complexity="1.4285714285714286">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="11" hits="20" branch="false"/>
+							</lines>
+						</method>
+						<method name="div" signature="(DD)D" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="25" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="divByModulo" signature="(II)I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="40" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="multiply" signature="(II)J" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="20" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="pow" signature="(DD)D" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="45" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="sqrt" signature="(D)D" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="35" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="subtract" signature="(II)I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="30" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="sum" signature="(II)I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="15" hits="1" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="11" hits="20" branch="false"/>
+						<line number="15" hits="1" branch="false"/>
+						<line number="20" hits="1" branch="false"/>
+						<line number="25" hits="1" branch="false"/>
+						<line number="30" hits="1" branch="false"/>
+						<line number="35" hits="1" branch="false"/>
+						<line number="40" hits="1" branch="false"/>
+						<line number="45" hits="1" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="zulus.lab2" line-rate="1.0" branch-rate="0.9285714285714286" complexity="1.4615384615384615">
+			<classes>
+				<class name="zulus.lab2.Client" filename="zulus/lab2/Client.java" line-rate="1.0" branch-rate="1.0" complexity="1.75">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;D)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="20" hits="6" branch="false"/>
+								<line number="21" hits="6" branch="false"/>
+								<line number="22" hits="6" branch="false"/>
+								<line number="23" hits="5" branch="false"/>
+							</lines>
+						</method>
+						<method name="canPay" signature="(D)Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="84" hits="12" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="85" hits="10" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+							</lines>
+						</method>
+						<method name="getMoney" signature="()D" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="49" hits="3" branch="false"/>
+							</lines>
+						</method>
+						<method name="getName" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="31" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="pay" signature="(D)Z" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="69" hits="5" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="70" hits="3" branch="false"/>
+								<line number="71" hits="3" branch="false"/>
+								<line number="73" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="setMoney" signature="(D)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="58" hits="6" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="59" hits="5" branch="false"/>
+								<line number="60" hits="5" branch="false"/>
+							</lines>
+						</method>
+						<method name="setName" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="40" hits="6" branch="false"/>
+								<line number="41" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="toString" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="90" hits="3" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="20" hits="6" branch="false"/>
+						<line number="21" hits="6" branch="false"/>
+						<line number="22" hits="6" branch="false"/>
+						<line number="23" hits="5" branch="false"/>
+						<line number="31" hits="1" branch="false"/>
+						<line number="40" hits="6" branch="false"/>
+						<line number="41" hits="6" branch="false"/>
+						<line number="49" hits="3" branch="false"/>
+						<line number="58" hits="6" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="59" hits="5" branch="false"/>
+						<line number="60" hits="5" branch="false"/>
+						<line number="69" hits="5" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="70" hits="3" branch="false"/>
+						<line number="71" hits="3" branch="false"/>
+						<line number="73" hits="1" branch="false"/>
+						<line number="84" hits="12" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="85" hits="10" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="90" hits="3" branch="false"/>
+					</lines>
+				</class>
+				<class name="zulus.lab2.CountingHouse" filename="zulus/lab2/CountingHouse.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="9" hits="9" branch="false"/>
+								<line number="10" hits="9" branch="false"/>
+								<line number="11" hits="9" branch="false"/>
+							</lines>
+						</method>
+						<method name="getName" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="20" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="processOperation" signature="(DLzulus/lab2/Client;)Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="15" hits="2" branch="false"/>
+								<line number="16" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="setName" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="24" hits="9" branch="false"/>
+								<line number="25" hits="9" branch="false"/>
+							</lines>
+						</method>
+						<method name="toString" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="29" hits="1" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="9" hits="9" branch="false"/>
+						<line number="10" hits="9" branch="false"/>
+						<line number="11" hits="9" branch="false"/>
+						<line number="15" hits="2" branch="false"/>
+						<line number="16" hits="2" branch="false"/>
+						<line number="20" hits="1" branch="false"/>
+						<line number="24" hits="9" branch="false"/>
+						<line number="25" hits="9" branch="false"/>
+						<line number="29" hits="1" branch="false"/>
+					</lines>
+				</class>
+				<class name="zulus.lab2.CountingHouseGuard" filename="zulus/lab2/CountingHouseGuard.java" line-rate="1.0" branch-rate="0.8333333333333334" complexity="2.5">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lzulus/lab2/ICountingHouse;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="9" hits="9" branch="false"/>
+								<line number="10" hits="9" branch="false"/>
+								<line number="11" hits="8" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCountinghouse" signature="()Lzulus/lab2/ICountingHouse;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="14" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="processOperation" signature="(DLzulus/lab2/Client;)Ljava/lang/String;" line-rate="1.0" branch-rate="0.75" complexity="0">
+							<lines>
+								<line number="24" hits="4" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="25" hits="4" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="26" hits="2" branch="false"/>
+								<line number="27" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="setCountingHouse" signature="(Lzulus/lab2/ICountingHouse;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="18" hits="9" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="19" hits="8" branch="false"/>
+								<line number="20" hits="8" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="9" hits="9" branch="false"/>
+						<line number="10" hits="9" branch="false"/>
+						<line number="11" hits="8" branch="false"/>
+						<line number="14" hits="1" branch="false"/>
+						<line number="18" hits="9" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="19" hits="8" branch="false"/>
+						<line number="20" hits="8" branch="false"/>
+						<line number="24" hits="4" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="25" hits="4" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="26" hits="2" branch="false"/>
+						<line number="27" hits="2" branch="false"/>
+					</lines>
+				</class>
+				<class name="zulus.lab2.ICountingHouse" filename="zulus/lab2/ICountingHouse.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="zulus.lab2.OperationCannotBePerformedException" filename="zulus/lab2/OperationCannotBePerformedException.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lzulus/lab2/Client;Lzulus/lab2/ICountingHouse;Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="11" hits="2" branch="false"/>
+								<line number="12" hits="2" branch="false"/>
+								<line number="13" hits="2" branch="false"/>
+								<line number="14" hits="2" branch="false"/>
+								<line number="15" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="getClient" signature="()Lzulus/lab2/Client;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="34" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="getDescription" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="18" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="getHouse" signature="()Lzulus/lab2/ICountingHouse;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="38" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="setClient" signature="(Lzulus/lab2/Client;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="26" hits="2" branch="false"/>
+								<line number="27" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="setDescription" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="22" hits="2" branch="false"/>
+								<line number="23" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="setHouse" signature="(Lzulus/lab2/ICountingHouse;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="30" hits="2" branch="false"/>
+								<line number="31" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="toString" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="43" hits="1" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="11" hits="2" branch="false"/>
+						<line number="12" hits="2" branch="false"/>
+						<line number="13" hits="2" branch="false"/>
+						<line number="14" hits="2" branch="false"/>
+						<line number="15" hits="2" branch="false"/>
+						<line number="18" hits="2" branch="false"/>
+						<line number="22" hits="2" branch="false"/>
+						<line number="23" hits="2" branch="false"/>
+						<line number="26" hits="2" branch="false"/>
+						<line number="27" hits="2" branch="false"/>
+						<line number="30" hits="2" branch="false"/>
+						<line number="31" hits="2" branch="false"/>
+						<line number="34" hits="2" branch="false"/>
+						<line number="38" hits="2" branch="false"/>
+						<line number="43" hits="1" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+	</packages>
+</coverage>
