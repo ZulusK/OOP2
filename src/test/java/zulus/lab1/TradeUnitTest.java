@@ -145,6 +145,23 @@ public class TradeUnitTest {
     }
 
     @Test
+    void SellerThrowsErrorOnCallSell() {
+        Product P = new Product(100, 101, "PC");
+        Seller S = new Seller("Harry", 0.1);
+        assertThrows(IllegalArgumentException.class, () -> S.sell(P, -10, 0));
+        assertThrows(IllegalArgumentException.class, () -> S.sell(null, 10, 0));
+    }
+
+    @Test
+    void ManagerThrowsErrorOnCallSell() {
+        Product P = new Product(100, 101, "PC");
+        Manager
+                M = new Manager("Harry", 0.1);
+        assertThrows(IllegalArgumentException.class, () -> M.sell(P, -10, 0));
+        assertThrows(IllegalArgumentException.class, () -> M.sell(null, 10, 0));
+    }
+
+    @Test
     void SellProductWithZeroGain() {
         Product P = new Product(100, 101, "PC");
         Manager M = new Manager("Harry", 0.1);
