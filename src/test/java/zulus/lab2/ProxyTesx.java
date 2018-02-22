@@ -1,10 +1,10 @@
 package zulus.lab2;
 
 import org.junit.jupiter.api.Test;
-import zulus.lab2.proxyPattern.Client;
-import zulus.lab2.proxyPattern.CountingHouse;
-import zulus.lab2.proxyPattern.CountingHouseGuard;
-import zulus.lab2.proxyPattern.OperationCannotBePerformedException;
+import zulus.lab2.countingHouse.Client;
+import zulus.lab2.countingHouse.CountingHouse;
+import zulus.lab2.countingHouse.CountingHouseGuard;
+import zulus.lab2.countingHouse.OperationCannotBePerformedException;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
@@ -12,12 +12,12 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Created by zulus on 22.02.18
  */
-public class ProxyTest {
+public class ProxyTesx {
     CountingHouse CH;
     CountingHouseGuard CHG;
     double _delta = 1e-6;
 
-    public ProxyTest() {
+    public ProxyTesx() {
         this.CH = new CountingHouse("Privat bank");
         this.CHG = new CountingHouseGuard(CH);
     }
