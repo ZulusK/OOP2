@@ -1,4 +1,4 @@
-package zulus.lab2.wesite;
+package zulus.lab2.adapter;
 
 /**
  * Created by zulus on 22.02.18

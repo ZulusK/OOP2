@@ -1,17 +1,16 @@
-package zulus.lab2.wesite;
+package zulus.lab2.adapter;
 
 /**
  * Created by zulus on 22.02.18
  */
 
 /**
- * defines website, that is used for young users
+ * defines website, that is used for adult users
  */
-public class JuniorWebsite implements IWebsite {
+public class AdultWebsite implements IWebsite {
     @Override
     public String enterToService(Visitor visitor) {
         if (visitor == null) throw new IllegalArgumentException("Argument visitor must be not-null value");
-        return String.format("Привет, %s", visitor.getName());
+        return String.format("Добрый день, %s", visitor.getName());
     }
 }
-

@@ -1,11 +1,11 @@
-package zulus.lab2.wesite;
+package zulus.lab2.adapter;
 
 /**
  * Created by zulus on 22.02.18
  */
 
 /**
- * Defines 'target' class of wesite structure
+ * Defines 'target' class of adapter structure
  */
 public class Website implements IWebsite {
     public final int ADULT_AGE = 35;
