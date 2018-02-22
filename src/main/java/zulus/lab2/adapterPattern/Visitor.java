@@ -1,4 +1,4 @@
-package zulus.lab2.adapter;
+package zulus.lab2.adapterPattern;
 
 /**
  * Created by zulus on 22.02.18

@@ -1,10 +1,10 @@
 package zulus.lab2;
 
 import org.junit.jupiter.api.Test;
-import zulus.lab2.adapter.AdultWebsite;
-import zulus.lab2.adapter.JuniorWebsite;
-import zulus.lab2.adapter.Visitor;
-import zulus.lab2.adapter.Website;
+import zulus.lab2.adapterPattern.AdultWebsite;
+import zulus.lab2.adapterPattern.JuniorWebsite;
+import zulus.lab2.adapterPattern.Visitor;
+import zulus.lab2.adapterPattern.Website;
 
 import static junit.framework.TestCase.assertNotNull;
 import static junit.framework.TestCase.assertTrue;

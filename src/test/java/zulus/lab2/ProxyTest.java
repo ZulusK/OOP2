@@ -1,10 +1,10 @@
 package zulus.lab2;
 
 import org.junit.jupiter.api.Test;
-import zulus.lab2.proxy.Client;
-import zulus.lab2.proxy.CountingHouse;
-import zulus.lab2.proxy.CountingHouseGuard;
-import zulus.lab2.proxy.OperationCannotBePerformedException;
+import zulus.lab2.proxyPattern.Client;
+import zulus.lab2.proxyPattern.CountingHouse;
+import zulus.lab2.proxyPattern.CountingHouseGuard;
+import zulus.lab2.proxyPattern.OperationCannotBePerformedException;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
