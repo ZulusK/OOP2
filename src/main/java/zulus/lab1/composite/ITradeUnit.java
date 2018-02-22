@@ -1,4 +1,4 @@
-package zulus.lab1.beutyStaff;
+package zulus.lab1.composite;
 
 /**
  * Created by zulus on 21.02.18

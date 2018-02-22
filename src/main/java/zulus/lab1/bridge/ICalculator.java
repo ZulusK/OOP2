@@ -1,4 +1,4 @@
-package zulus.lab1.calc;
+package zulus.lab1.bridge;
 /**
  * Created by zulus on 21.02.18
  */

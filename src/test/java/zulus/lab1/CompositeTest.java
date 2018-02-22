@@ -2,16 +2,16 @@ package zulus.lab1;
 
 
 import org.junit.jupiter.api.Test;
-import zulus.lab1.beutyStaff.Manager;
-import zulus.lab1.beutyStaff.Product;
-import zulus.lab1.beutyStaff.Seller;
+import zulus.lab1.composite.Manager;
+import zulus.lab1.composite.Product;
+import zulus.lab1.composite.Seller;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Created by zulus on 21.02.18
  */
-public class TradeUnitTest {
+public class CompositeTest {
     double _delta = 1e-6;
 
     @Test

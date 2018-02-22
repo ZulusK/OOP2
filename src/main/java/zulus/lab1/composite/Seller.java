@@ -1,29 +1,26 @@
-package zulus.lab1.beutyStaff;
+package zulus.lab1.composite;
 
-import java.util.HashSet;
 
 /**
  * Created by zulus on 21.02.18
  */
 
 /**
- * Defines manager of trading company
+ * Defines seller of trading company
  */
-public class Manager implements ITradeUnit {
+public class Seller implements ITradeUnit {
     double _extraCharge;
     String _name;
-    HashSet<ITradeUnit> _employees;
 
     /**
-     * create new Manager
+     * create new Seller
      *
-     * @param name        name of manager
-     * @param extraCharge default extraCharge of manager
+     * @param name        name of seller
+     * @param extraCharge default extraCharge of seller
      */
-    public Manager(String name, double extraCharge) {
+    public Seller(String name, double extraCharge) {
         setExtraCharge(extraCharge);
         setName(name);
-        this._employees = new HashSet<>();
     }
 
     @Override
@@ -49,15 +46,12 @@ public class Manager implements ITradeUnit {
 
     @Override
     public boolean add(ITradeUnit employee) {
-        if (employee == null) throw new IllegalArgumentException("Argument employee must be not-null value");
-        if (employee == this) throw new IllegalArgumentException("Employee must be not self-pointer");
-        return this._employees.add(employee);
+        throw new UnsupportedOperationException("Seller couldn't have employee");
     }
 
     @Override
     public boolean remove(ITradeUnit employee) {
-        if (employee == null) throw new IllegalArgumentException("Argument employee must be not-null value");
-        return this._employees.remove(employee);
+        throw new UnsupportedOperationException("Seller couldn't have employee");
     }
 
     @Override
@@ -72,18 +66,11 @@ public class Manager implements ITradeUnit {
         if (product == null)
             throw new IllegalArgumentException("Argument product must be not-null value");
         if (costOfProduct < product.getMinCost())
-            throw new IllegalArgumentException("costOfProduct must be >= product.minCost");
-        if (_employees.isEmpty()) {
-            System.out.printf("%" + deep + "s Manager %s cannot sold the `%s` \n", " ", _name, product);
-            return false;
-        } else {
-            double costOfTrade = getCurrentCost(product, costOfProduct);
-            System.out.printf("%" + deep + "s Manager %s sold the `%s` for %.2f$ (+%.2f%%)\n", " ", _name, product, costOfTrade, getCurrentExtraCharge(costOfProduct, costOfTrade));
-            for (ITradeUnit unit : _employees) {
-                unit.sell(product, costOfTrade, deep + 1);
-            }
-            return true;
-        }
+            throw new IllegalArgumentException("CurrentCost must be >= product.minCost");
+
+        double costOfTrade = getCurrentCost(product, costOfProduct);
+        System.out.printf("%" + deep + "s Seller %s sold the `%s` for %.2f$ (+%.2f%%)\n", " ", _name, product, costOfTrade, getCurrentExtraCharge(costOfProduct, costOfTrade));
+        return true;
     }
 
     private double getCurrentExtraCharge(double costOfProduct, double costOfTrade) {

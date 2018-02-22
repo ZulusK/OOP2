@@ -1,14 +1,15 @@
-package zulus.lab1.calc;
+package zulus.lab1.bridge;
 
 /**
  * Created by zulus on 21.02.18
  */
 
+
 /**
- * Defines simple Calculator, that provides next operations
- * sum, subtraction, dividing, multiplication
+ * Defines engineer Calculator, that provides next operations
+ * square root, exponentiation, divide by modulo + operation of SimpleCalculator
  */
-public class SimpleCalculator implements ICalculator {
+public class EngineerCalculator implements ICalculator {
 
     @Override
     public int sum(int A, int B) {
@@ -32,16 +33,16 @@ public class SimpleCalculator implements ICalculator {
 
     @Override
     public double sqrt(double A) {
-        throw new UnsupportedOperationException("Simple calculator cannot do this");
+        return Math.sqrt(A);
     }
 
     @Override
     public int divByModulo(int A, int B) {
-        throw new UnsupportedOperationException("Simple calculator cannot do this");
+        return A % B;
     }
 
     @Override
     public double pow(double A, double pow) {
-        throw new UnsupportedOperationException("Simple calculator cannot do this");
+        return Math.pow(A, pow);
     }
 }

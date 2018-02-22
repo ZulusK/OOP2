@@ -1,22 +1,22 @@
 package zulus.lab1;
 
 import org.junit.jupiter.api.Test;
-import zulus.lab1.calc.AbstractCalculator;
-import zulus.lab1.calc.EngineerCalculator;
-import zulus.lab1.calc.InvalidCalcModeException;
-import zulus.lab1.calc.SimpleCalculator;
+import zulus.lab1.bridge.AbstractCalculator;
+import zulus.lab1.bridge.EngineerCalculator;
+import zulus.lab1.bridge.InvalidCalcModeException;
+import zulus.lab1.bridge.SimpleCalculator;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Created by zulus on 21.02.18
  */
-class AbstractCalculatorTest {
+class BridgeTest {
     private double _delta = 1e-6;
     private AbstractCalculator simple;
     private AbstractCalculator engineer;
 
-    AbstractCalculatorTest() {
+    BridgeTest() {
         this.simple = new AbstractCalculator(new SimpleCalculator());
         this.engineer = new AbstractCalculator(new EngineerCalculator());
     }
