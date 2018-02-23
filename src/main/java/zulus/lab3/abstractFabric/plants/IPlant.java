@@ -31,5 +31,37 @@ public abstract class IPlant {
 
     public abstract Quality getQualityOfPaper();
 
+    public int compareToByQuality(IPlant plant) {
+        return this.getQualityOfPaper().ordinal() + this.getQualityOfColors().ordinal() - plant.getQualityOfColors().ordinal() - plant.getQualityOfPaper().ordinal();
+    }
 
+    public int compareToByAward(IPlant plant) {
+        if (plant == null) return 1;
+        if (plant == this) return 0;
+        if (plant.getCostOfAward() == this.getCostOfAward()) {
+            return compareToByQuality(plant);
+        } else {
+            return plant.getCostOfAward() - this.getCostOfAward();
+        }
+    }
+
+    public int compareToByCertificate(IPlant plant) {
+        if (plant == null) return 1;
+        if (plant == this) return 0;
+        if (plant.getCostOfCertificate() == this.getCostOfCertificate()) {
+            return compareToByQuality(plant);
+        } else {
+            return plant.getCostOfCertificate() - this.getCostOfCertificate();
+        }
+    }
+
+    public int compareToByDiploma(IPlant plant) {
+        if (plant == null) return 1;
+        if (plant == this) return 0;
+        if (plant.getCostOfDiploma() == this.getCostOfDiploma()) {
+            return compareToByQuality(plant);
+        } else {
+            return plant.getCostOfDiploma() - this.getCostOfDiploma();
+        }
+    }
 }

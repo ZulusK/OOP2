@@ -38,7 +38,7 @@ public class PlantA extends IPlant {
     }
 
     public int getCostOfCertificate() {
-        return 700;
+        return 500;
     }
 
     @Override
@@ -48,6 +48,6 @@ public class PlantA extends IPlant {
 
     @Override
     public Quality getQualityOfPaper() {
-        return Quality.POOR;
+        return Quality.GOOD;
     }
 }

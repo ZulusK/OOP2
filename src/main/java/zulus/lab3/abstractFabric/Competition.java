@@ -41,7 +41,7 @@ public class Competition {
     }
 
     private IPlant[] selectBestPlants(long[][] prices, long budget) {
-        IPlant bestPlants[] = new IPlant[3];
+        IPlant bestPlants[] = {plants.get(0), plants.get(0), plants.get(0)};
         long bestCost = prices[0][WINNER_ID] + prices[0][LOOSER_ID] + prices[0][DIPLOMAT_ID];
 
         // search best combination of cheapest printers
@@ -50,17 +50,27 @@ public class Competition {
                 //calculate sub sum
                 long sum = prices[dID][DIPLOMAT_ID] + prices[wID][WINNER_ID];
                 for (int lID = 0; lID < prices.length; lID++) {
-                    if (sum + prices[lID][LOOSER_ID] < bestCost) {
-                        System.out.printf("New best %d %d %d\n", wID, lID, dID);
+                    if (sum + prices[lID][LOOSER_ID] <= bestCost) {
                         bestCost = sum + prices[lID][LOOSER_ID];
-                        bestPlants[WINNER_ID] = plants.get(wID);
-                        bestPlants[LOOSER_ID] = plants.get(lID);
-                        bestPlants[DIPLOMAT_ID] = plants.get(dID);
+                        if (plants.get(wID).compareToByAward(bestPlants[WINNER_ID]) >= 0) {
+                            bestPlants[WINNER_ID] = plants.get(wID);
+                        }
+                        if (plants.get(lID).compareToByCertificate(bestPlants[LOOSER_ID]) >= 0) {
+                            bestPlants[LOOSER_ID] = plants.get(lID);
+                        }
+                        if (plants.get(dID).compareToByDiploma(bestPlants[DIPLOMAT_ID]) >= 0) {
+                            bestPlants[DIPLOMAT_ID] = plants.get(dID);
+                        }
                     }
                 }
             }
         }
         if (bestCost > budget) throw new IllegalArgumentException("Cannot reward participants, too little money");
+        System.out.printf("We spend %d$: diplomat %s, winner %s looser %s\n",
+                bestCost,
+                bestPlants[DIPLOMAT_ID].getClass().getSimpleName(),
+                bestPlants[WINNER_ID].getClass().getSimpleName(),
+                bestPlants[LOOSER_ID].getClass().getSimpleName());
         return bestPlants;
     }
 

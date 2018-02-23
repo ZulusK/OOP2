@@ -10,6 +10,7 @@ import java.util.List;
 
 import static junit.framework.TestCase.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Created by zulus on 23.02.18
@@ -44,5 +45,20 @@ public class AbstractFabricTest {
         assertNotNull(prizeList);
         assertEquals(prizeList.size(), count);
         prizeList.forEach(x -> System.out.println(x));
+    }
+
+
+    @Test
+    void printPrizesTooLittleBudget() {
+        int count = 10;
+        int budget = 1;
+        assertThrows(IllegalArgumentException.class, () -> competition.reward(Arrays.asList(loader.getParticipants(count)), budget));
+    }
+
+    @Test
+    void printPrizesNullPointer() {
+        int count = 10;
+        int budget = 1;
+        assertThrows(IllegalArgumentException.class, () -> competition.reward(null, budget));
     }
 }
