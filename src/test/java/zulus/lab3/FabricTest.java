@@ -17,44 +17,9 @@ public class FabricTest {
     CardFabric fabric;
 
     public FabricTest() {
-        fabric = new CardFabric();
+        fabric = CardFabric.getInstance();
     }
 
-    @Test
-    void tilesCreate() {
-        Dignity dignity = Dignity.ACE;
-        TilesCard card = new TilesCard(dignity);
-        assertEquals(card.getSuit(), "tiles");
-        assertEquals(card.getDignity(), dignity);
-        assertThrows(IllegalArgumentException.class, () -> new TilesCard(null));
-    }
-
-    @Test
-    void heartsCreate() {
-        Dignity dignity = Dignity.ACE;
-        HeartsCard card = new HeartsCard(dignity);
-        assertEquals(card.getSuit(), "hearts");
-        assertEquals(card.getDignity(), dignity);
-        assertThrows(IllegalArgumentException.class, () -> new HeartsCard(null));
-    }
-
-    @Test
-    void PikesCreate() {
-        Dignity dignity = Dignity.ACE;
-        PikesСard card = new PikesСard(dignity);
-        assertEquals(card.getSuit(), "pikes");
-        assertEquals(card.getDignity(), dignity);
-        assertThrows(IllegalArgumentException.class, () -> new PikesСard(null));
-    }
-
-    @Test
-    void CloversCreate() {
-        Dignity dignity = Dignity.ACE;
-        CloversCard card = new CloversCard(dignity);
-        assertEquals(card.getSuit(), "clovers");
-        assertEquals(card.getDignity(), dignity);
-        assertThrows(IllegalArgumentException.class, () -> new CloversCard(null));
-    }
 
     @Test
     void TestFabricSuitClovers() {
@@ -81,6 +46,7 @@ public class FabricTest {
         Dignity dignity = Dignity.QUEEN;
         String suit = "tiles";
         ICard card = (fabric.createCard(dignity, suit));
+        System.out.println(card);
         assertNotNull(card);
         assertTrue(card instanceof TilesCard);
         assertEquals(card.getSuit().toLowerCase(), suit);

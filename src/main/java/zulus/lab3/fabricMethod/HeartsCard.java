@@ -8,8 +8,7 @@ package zulus.lab3.fabricMethod;
  * defines type of hearts card
  */
 public class HeartsCard extends ICard {
-    public HeartsCard(Dignity value) {
-        super(value);
+    public HeartsCard() {
     }
 
     @Override
@@ -17,4 +16,9 @@ public class HeartsCard extends ICard {
         return "hearts";
     }
 
+    @Override
+    public HeartsCard clone() {
+        HeartsCard card = new HeartsCard();
+        return card;
+    }
 }

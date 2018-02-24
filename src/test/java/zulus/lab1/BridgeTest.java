@@ -97,9 +97,9 @@ class BridgeTest {
     void simpleUnsupportedOperations() {
         SimpleCalculator s = new SimpleCalculator();
         assertAll(
-                () -> assertThrows(UnsupportedOperationException.class, () -> s.sqrt(10)),
-                () -> assertThrows(UnsupportedOperationException.class, () -> s.divByModulo(10, 1)),
-                () -> assertThrows(UnsupportedOperationException.class, () -> s.pow(10, 3))
+                () -> assertThrows(InvalidCalcModeException.class, () -> s.sqrt(10)),
+                () -> assertThrows(InvalidCalcModeException.class, () -> s.divByModulo(10, 1)),
+                () -> assertThrows(InvalidCalcModeException.class, () -> s.pow(10, 3))
         );
     }
 

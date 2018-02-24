@@ -90,11 +90,7 @@ public class AbstractCalculator {
      * @return square root of A
      */
     public double sqrt(double A) {
-        if (isInEngineerMode()) {
-            return _calculator.sqrt(A);
-        } else {
-            throw new InvalidCalcModeException();
-        }
+        return _calculator.sqrt(A);
     }
 
     /**
@@ -105,11 +101,7 @@ public class AbstractCalculator {
      * @return A%B
      */
     public int divByModulo(int A, int B) {
-        if (isInEngineerMode()) {
-            return _calculator.divByModulo(A, B);
-        } else {
-            throw new InvalidCalcModeException();
-        }
+        return _calculator.divByModulo(A, B);
     }
 
     /**
@@ -120,11 +112,7 @@ public class AbstractCalculator {
      * @return A^pow
      */
     public double pow(double A, double pow) {
-        if (isInEngineerMode()) {
-            return _calculator.pow(A, pow);
-        } else {
-            throw new InvalidCalcModeException();
-        }
+        return _calculator.pow(A, pow);
     }
 
     /**

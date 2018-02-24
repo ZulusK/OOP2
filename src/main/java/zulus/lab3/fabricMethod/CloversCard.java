@@ -8,12 +8,17 @@ package zulus.lab3.fabricMethod;
  * defines type of clovers card
  */
 public class CloversCard extends ICard {
-    public CloversCard(Dignity value) {
-        super(value);
+    public CloversCard() {
     }
 
     @Override
     public String getSuit() {
         return "clovers";
+    }
+
+    @Override
+    public CloversCard clone() {
+        CloversCard card = new CloversCard();
+        return card;
     }
 }

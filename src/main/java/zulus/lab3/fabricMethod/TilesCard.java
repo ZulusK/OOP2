@@ -8,8 +8,15 @@ package zulus.lab3.fabricMethod;
  * defines type of tiles card
  */
 public class TilesCard extends ICard {
-    public TilesCard(Dignity value) {
-        super(value);
+    public TilesCard() {
+
+    }
+
+
+    @Override
+    public TilesCard clone() {
+        TilesCard card = new TilesCard();
+        return card;
     }
 
     @Override

@@ -7,24 +7,23 @@ package zulus.lab2.adapter;
 /**
  * Defines 'target' class of adapter structure
  */
-public class Website implements IWebsite {
+public class SmartWebsite extends DefaultWebsite {
     public final int ADULT_AGE = 35;
-
     private AdultWebsite _forAdult;
-    private JuniorWebsite _forJunior;
+    private DefaultWebsite _default;
 
-    public Website() {
+    public SmartWebsite() {
         _forAdult = new AdultWebsite();
-        _forJunior = new JuniorWebsite();
+        _default = new DefaultWebsite();
     }
 
     @Override
     public String enterToService(Visitor visitor) {
         if (visitor == null) throw new IllegalArgumentException("Argument visitor must be not-null value");
         if (visitor.getAge() < ADULT_AGE) {
-            return _forJunior.enterToService(visitor);
+            return _default.enterToService(visitor);
         } else {
-            return _forAdult.enterToService(visitor);
+            return _forAdult.meetAdult(visitor);
         }
     }
 }

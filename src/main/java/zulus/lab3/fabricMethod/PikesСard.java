@@ -13,8 +13,12 @@ public class PikesСard extends ICard {
         return "pikes";
     }
 
-    public PikesСard(Dignity value) {
-        super(value);
+    public PikesСard() {
     }
 
+    @Override
+    public PikesСard clone() {
+        PikesСard card = new PikesСard();
+        return card;
+    }
 }

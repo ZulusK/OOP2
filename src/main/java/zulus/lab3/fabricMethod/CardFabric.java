@@ -8,23 +8,51 @@ package zulus.lab3.fabricMethod;
  * defines fabric of cards
  */
 public class CardFabric {
+    private static CardFabric _instance;
+
+    private HeartsCard _hearts;
+    private TilesCard _tiiles;
+    private PikesСard _pikes;
+    private CloversCard _clovers;
+
+    private CardFabric() {
+        _hearts = new HeartsCard();
+        _tiiles = new TilesCard();
+        _pikes = new PikesСard();
+        _clovers = new CloversCard();
+    }
+
+    public static CardFabric getInstance() {
+        if (_instance == null) {
+            _instance = new CardFabric();
+        }
+        return _instance;
+    }
+
     /**
      * create new card with specific dignity and suit
      *
      * @return created card
      */
     public ICard createCard(Dignity dignity, String suit) {
+        ICard card;
         switch (suit.toLowerCase()) {
             case "hearts":
-                return new HeartsCard(dignity);
+                card = _hearts.clone();
+                break;
             case "tiles":
-                return new TilesCard(dignity);
+                card = _tiiles.clone();
+                break;
             case "pikes":
-                return new PikesСard(dignity);
+                card = _pikes.clone();
+                break;
             case "clovers":
-                return new CloversCard(dignity);
+                card = _clovers.clone();
+                break;
             default:
                 throw new IllegalArgumentException("Unrecognized suit of card");
         }
+        card.setDignity(dignity);
+        return card;
     }
 }

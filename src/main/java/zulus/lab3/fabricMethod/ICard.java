@@ -19,11 +19,9 @@ public abstract class ICard {
 
     /**
      * create card with specific Dignity
-     *
-     * @param _dignity
      */
-    public ICard(Dignity _dignity) {
-        setDignity(_dignity);
+    public ICard() {
+
     }
 
     /**
@@ -49,4 +47,6 @@ public abstract class ICard {
     public String toString() {
         return String.format("%s %s card", this.getSuit(), this._dignity);
     }
+
+    public abstract ICard clone();
 }

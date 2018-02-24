@@ -2,9 +2,9 @@ package zulus.lab2;
 
 import org.junit.jupiter.api.Test;
 import zulus.lab2.adapter.AdultWebsite;
-import zulus.lab2.adapter.JuniorWebsite;
+import zulus.lab2.adapter.DefaultWebsite;
+import zulus.lab2.adapter.SmartWebsite;
 import zulus.lab2.adapter.Visitor;
-import zulus.lab2.adapter.Website;
 
 import static junit.framework.TestCase.assertNotNull;
 import static junit.framework.TestCase.assertTrue;
@@ -15,10 +15,10 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
  * Created by zulus on 22.02.18
  */
 public class AdapterTest {
-    private Website W;
+    private SmartWebsite W;
 
     public AdapterTest() {
-        W = new Website();
+        W = new SmartWebsite();
     }
 
     @Test
@@ -48,7 +48,7 @@ public class AdapterTest {
     void WebsiteJunior() {
         String name = "Sam";
         int age = 15;
-        JuniorWebsite JW = new JuniorWebsite();
+        DefaultWebsite JW = new DefaultWebsite();
         assertNotNull(JW.enterToService(new Visitor(name, W.ADULT_AGE - 1)));
         assertNotNull(JW.enterToService(new Visitor(name, W.ADULT_AGE)));
         assertNotNull(JW.enterToService(new Visitor(name, W.ADULT_AGE + 1)));
@@ -62,13 +62,13 @@ public class AdapterTest {
         String name = "Sam";
         int age = 15;
         AdultWebsite AW = new AdultWebsite();
-        assertNotNull(AW.enterToService(new Visitor(name, W.ADULT_AGE - 1)));
-        assertNotNull(AW.enterToService(new Visitor(name, W.ADULT_AGE)));
-        assertNotNull(AW.enterToService(new Visitor(name, W.ADULT_AGE + 1)));
-        assertThrows(IllegalArgumentException.class, () -> AW.enterToService(null));
-        assertTrue(AW.enterToService(new Visitor(name, W.ADULT_AGE - 1)).toLowerCase().startsWith("привет, "));
-        assertTrue(AW.enterToService(new Visitor(name, W.ADULT_AGE)).toLowerCase().startsWith("привет, "));
-        assertTrue(AW.enterToService(new Visitor(name, W.ADULT_AGE + 1)).toLowerCase().startsWith("привет, "));
+        assertNotNull(AW.meetAdult(new Visitor(name, W.ADULT_AGE - 1)));
+        assertNotNull(AW.meetAdult(new Visitor(name, W.ADULT_AGE)));
+        assertNotNull(AW.meetAdult(new Visitor(name, W.ADULT_AGE + 1)));
+        assertThrows(IllegalArgumentException.class, () -> AW.meetAdult(null));
+        assertTrue(AW.meetAdult(new Visitor(name, W.ADULT_AGE - 1)).toLowerCase().startsWith("привет, "));
+        assertTrue(AW.meetAdult(new Visitor(name, W.ADULT_AGE)).toLowerCase().startsWith("привет, "));
+        assertTrue(AW.meetAdult(new Visitor(name, W.ADULT_AGE + 1)).toLowerCase().startsWith("привет, "));
     }
 
     @Test

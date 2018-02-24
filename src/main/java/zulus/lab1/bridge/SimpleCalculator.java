@@ -32,16 +32,16 @@ public class SimpleCalculator implements ICalculator {
 
     @Override
     public double sqrt(double A) {
-        throw new UnsupportedOperationException("Simple calculator cannot do this");
+        throw new InvalidCalcModeException();
     }
 
     @Override
     public int divByModulo(int A, int B) {
-        throw new UnsupportedOperationException("Simple calculator cannot do this");
+        throw new InvalidCalcModeException();
     }
 
     @Override
     public double pow(double A, double pow) {
-        throw new UnsupportedOperationException("Simple calculator cannot do this");
+        throw new InvalidCalcModeException();
     }
 }

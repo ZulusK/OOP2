@@ -7,7 +7,7 @@ package zulus.lab2.adapter;
 /**
  * defines website, that is used for young users
  */
-public class JuniorWebsite implements IWebsite {
+public class DefaultWebsite implements IWebsite {
     @Override
     public String enterToService(Visitor visitor) {
         if (visitor == null) throw new IllegalArgumentException("Argument visitor must be not-null value");
