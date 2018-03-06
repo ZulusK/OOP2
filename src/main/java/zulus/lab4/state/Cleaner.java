@@ -34,10 +34,9 @@ public class Cleaner {
                 currentState = _LC;
                 break;
             case NORMAL:
+            default:
                 currentState = _NC;
                 break;
-            default:
-                throw new IllegalArgumentException("Argument mode must be an instance of State enum");
         }
     }
 }
