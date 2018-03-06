@@ -9,6 +9,7 @@ import zulus.lab5.mediator.Seller;
 import java.util.List;
 
 import static junit.framework.TestCase.assertTrue;
+import static org.junit.Assert.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -158,5 +159,27 @@ public class MediatorTest {
         assertTrue(flats.contains(F3));
         assertTrue(flats.contains(F4));
         assertThrows(IllegalArgumentException.class, () -> A.buy(B));
+    }
+
+    @Test
+    void agency_sell_addFlatWithExistingBuyer() {
+        Agency A = new Agency();
+        Seller S = new Seller("Rick");
+        Flat F1 = new Flat(1, 1e5, S);
+        Flat F2 = new Flat(3, 1e5, S);
+        Flat F3 = new Flat(3, 1e4, S);
+        Buyer B1 = new Buyer("Ron", 3, 1e6);
+        Buyer B2 = new Buyer("John", 3, 1e7);
+        Buyer B3 = new Buyer("Willy", 4, 1e7);
+        A.sell(F1);
+        A.sell(F2);
+        A.buy(B1);
+        A.buy(B2);
+        A.buy(B3);
+        List buyers = A.sell(F3);
+        assertEquals(buyers.size(), 2);
+        assertTrue(buyers.contains(B1));
+        assertTrue(buyers.contains(B2));
+        assertFalse(buyers.contains(B3));
     }
 }
