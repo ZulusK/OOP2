@@ -41,10 +41,6 @@ public class Flat {
         setRooms(rooms);
     }
 
-    @Override
-    public String toString() {
-        return String.format("Flat with %d rooms costs %.2f$, seller %s", _rooms, _cost, _seller);
-    }
 
     @Override
     public boolean equals(Object other) {

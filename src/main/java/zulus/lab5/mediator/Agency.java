@@ -16,13 +16,6 @@ public class Agency implements TradeMediator {
         this.buyers = new HashSet<>();
     }
 
-    private boolean register(Flat flat) {
-        return flats.add(flat);
-    }
-
-    private boolean register(Buyer buyer) {
-        return buyers.add(buyer);
-    }
 
     private List<Buyer> offer(Flat flat) {
         List<Buyer> selectedBuyers = buyers

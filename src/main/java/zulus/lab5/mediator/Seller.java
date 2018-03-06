@@ -7,7 +7,7 @@ public class Seller {
     private String name;
 
     public Seller(String name) {
-        this.name = name;
+        setName(name);
     }
 
     public String getName() {
@@ -18,8 +18,4 @@ public class Seller {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return String.format("Seller %s", getName());
-    }
 }
