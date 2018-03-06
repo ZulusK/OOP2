@@ -6,8 +6,9 @@
 
 
 The repository stores the source code of laboratory works of `Object-oriented programing, second term`    
-> Teacher: Zabolotnaya Tatiana Nikolaevna KPI, FAM 2018    
-> Student: Kazimirov Danil, group KP-61
+> Teacher: Zabolotnaya Tatiana Nikolaevna   
+> Student: Kazimirov Danil, group KP-61   
+> FAM, KPI 2018 
 ### Technologies
 * Java
 * Maven
