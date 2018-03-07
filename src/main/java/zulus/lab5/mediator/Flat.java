@@ -6,13 +6,13 @@ package zulus.lab5.mediator;
 public class Flat {
     private int _rooms;
     private double _cost;
-    private Seller _seller;
+    private FlatSeller _seller;
 
-    public Seller getSeller() {
+    public FlatSeller getSeller() {
         return _seller;
     }
 
-    public void setSeller(Seller seller) {
+    public void setSeller(FlatSeller seller) {
         if (seller == null) throw new IllegalArgumentException("Argument seller must be not-null value");
         this._seller = seller;
     }
@@ -35,12 +35,11 @@ public class Flat {
         this._cost = cost;
     }
 
-    public Flat(int rooms, double cost, Seller seller) {
+    public Flat(int rooms, double cost, FlatSeller seller) {
         setCost(cost);
         setSeller(seller);
         setRooms(rooms);
     }
-
 
     @Override
     public boolean equals(Object other) {
@@ -51,4 +50,5 @@ public class Flat {
         }
         return result;
     }
+
 }

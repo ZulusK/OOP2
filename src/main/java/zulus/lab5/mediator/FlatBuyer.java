@@ -3,7 +3,7 @@ package zulus.lab5.mediator;
 /**
  * Created by zulus on 06.03.18
  */
-public class Buyer {
+public class FlatBuyer {
     private String name;
     private int rooms;
     private double maxCost;
@@ -26,7 +26,7 @@ public class Buyer {
         this.maxCost = maxCost;
     }
 
-    public Buyer(String name, int rooms, double maxCost) {
+    public FlatBuyer(String name, int rooms, double maxCost) {
         this.setName(name);
         this.setMaxCost(maxCost);
         this.setRooms(rooms);
@@ -40,7 +40,9 @@ public class Buyer {
         this.name = name;
     }
 
+
     public boolean correspondsTo(Flat flat) {
         return flat.getCost() <= getMaxCost() && flat.getRooms() == getRooms();
     }
+
 }

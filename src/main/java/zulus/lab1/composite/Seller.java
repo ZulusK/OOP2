@@ -13,7 +13,7 @@ public class Seller implements ITradeUnit {
     String _name;
 
     /**
-     * create new Seller
+     * create new FlatSeller
      *
      * @param name        name of seller
      * @param extraCharge default extraCharge of seller
@@ -46,12 +46,12 @@ public class Seller implements ITradeUnit {
 
     @Override
     public boolean add(ITradeUnit employee) {
-        throw new UnsupportedOperationException("Seller couldn't have employee");
+        throw new UnsupportedOperationException("FlatSeller couldn't have employee");
     }
 
     @Override
     public boolean remove(ITradeUnit employee) {
-        throw new UnsupportedOperationException("Seller couldn't have employee");
+        throw new UnsupportedOperationException("FlatSeller couldn't have employee");
     }
 
     @Override
@@ -69,7 +69,7 @@ public class Seller implements ITradeUnit {
             throw new IllegalArgumentException("CurrentCost must be >= product.minCost");
 
         double costOfTrade = getCurrentCost(product, costOfProduct);
-        System.out.printf("%" + deep + "s Seller %s sold the `%s` for %.2f$ (+%.2f%%)\n", " ", _name, product, costOfTrade, getCurrentExtraCharge(costOfProduct, costOfTrade));
+        System.out.printf("%" + deep + "s FlatSeller %s sold the `%s` for %.2f$ (+%.2f%%)\n", " ", _name, product, costOfTrade, getCurrentExtraCharge(costOfProduct, costOfTrade));
         return true;
     }
 

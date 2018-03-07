@@ -1,12 +1,9 @@
 package zulus.lab5;
 
 import org.junit.jupiter.api.Test;
-import zulus.lab5.mediator.Agency;
-import zulus.lab5.mediator.Buyer;
-import zulus.lab5.mediator.Flat;
-import zulus.lab5.mediator.Seller;
+import zulus.lab5.mediator.*;
 
-import java.util.List;
+import java.util.Set;
 
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertFalse;
@@ -19,10 +16,26 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class MediatorTest {
     double _delta = 1e-6;
 
+
+    @Test
+    void metaAgency_add() {
+        MetaAgency MA = new MetaAgency();
+        Agency A = new Agency(MA);
+        assertFalse(MA.register(A));
+    }
+
+    @Test
+    void metaAgency_unregister() {
+        MetaAgency MA = new MetaAgency();
+        Agency A = new Agency(MA);
+        assertTrue(MA.unregister(A));
+        assertFalse(MA.unregister(new Agency()));
+    }
+
     @Test
     void seller_constructor_valid() {
         String name = "Дядько Лев";
-        Seller s = new Seller(name);
+        FlatSeller s = new FlatSeller(name);
         assertEquals(s.getName(), name);
     }
 
@@ -31,7 +44,7 @@ public class MediatorTest {
         String name = "Олесь";
         int requiredRooms = 10;
         double cash = 100;
-        Buyer B = new Buyer(name, requiredRooms, cash);
+        FlatBuyer B = new FlatBuyer(name, requiredRooms, cash);
         assertEquals(B.getName(), name);
         assertEquals(B.getMaxCost(), cash, _delta);
         assertEquals(B.getRooms(), requiredRooms);
@@ -41,8 +54,8 @@ public class MediatorTest {
     void buyer_constructor_invalidRooms() {
         String name = "Олесь";
         double cash = 100;
-        assertThrows(IllegalArgumentException.class, () -> new Buyer(name, -1, cash));
-        assertThrows(IllegalArgumentException.class, () -> new Buyer(name, 0, cash));
+        assertThrows(IllegalArgumentException.class, () -> new FlatBuyer(name, -1, cash));
+        assertThrows(IllegalArgumentException.class, () -> new FlatBuyer(name, 0, cash));
 
     }
 
@@ -50,13 +63,13 @@ public class MediatorTest {
     void buyer_constructor_invalidCash() {
         String name = "Олесь";
         int requiredRooms = 1;
-        assertThrows(IllegalArgumentException.class, () -> new Buyer(name, requiredRooms, 0));
-        assertThrows(IllegalArgumentException.class, () -> new Buyer(name, requiredRooms, -1));
+        assertThrows(IllegalArgumentException.class, () -> new FlatBuyer(name, requiredRooms, 0));
+        assertThrows(IllegalArgumentException.class, () -> new FlatBuyer(name, requiredRooms, -1));
     }
 
     @Test
     void flat_constructor_valid() {
-        Seller seller = new Seller("Ванька");
+        FlatSeller seller = new FlatSeller("Ванька");
         int rooms = 5;
         double cost = 1e6;
         Flat f = new Flat(rooms, cost, seller);
@@ -67,7 +80,7 @@ public class MediatorTest {
 
     @Test
     void flat_constructor_invalidCost() {
-        Seller seller = new Seller("Ванька");
+        FlatSeller seller = new FlatSeller("Ванька");
         int rooms = 5;
         double cost = -1e6;
         assertThrows(IllegalArgumentException.class, () -> new Flat(rooms, cost, seller));
@@ -75,7 +88,7 @@ public class MediatorTest {
 
     @Test
     void flat_constructor_invalidRooms() {
-        Seller seller = new Seller("Ванька");
+        FlatSeller seller = new FlatSeller("Ванька");
         int rooms = -5;
         double cost = 1e6;
         assertThrows(IllegalArgumentException.class, () -> new Flat(rooms, cost, seller));
@@ -83,7 +96,7 @@ public class MediatorTest {
 
     @Test
     void flat_constructor_emptySeller() {
-        Seller seller = null;
+        FlatSeller seller = null;
         int rooms = 5;
         double cost = 1e6;
         assertThrows(IllegalArgumentException.class, () -> new Flat(rooms, cost, seller));
@@ -92,51 +105,65 @@ public class MediatorTest {
     @Test
     void agency_sell_newFlat() {
         Agency A = new Agency();
-        List list = A.sell(new Flat(10, 1, new Seller("Lloyd")));
+        Set list = A.sell(new Flat(10, 1, new FlatSeller("Lloyd")));
         assertTrue(list.isEmpty());
     }
 
     @Test
     void agency_buy_newFlat() {
         Agency A = new Agency();
-        List list = A.buy(new Buyer("Гришка", 10, 1));
+        Set list = A.buy(new FlatBuyer("Гришка", 10, 1));
         assertTrue(list.isEmpty());
     }
 
     @Test
-    void agency_sell_flatAlreadyExist() {
+    void agency_register_flatAlreadyExist() {
         Agency A = new Agency();
-        Flat F = new Flat(10, 1, new Seller("Lloyd"));
-        A.sell(F);
-        assertThrows(IllegalArgumentException.class, () -> A.sell(F));
+        Flat F = new Flat(10, 1, new FlatSeller("Lloyd"));
+        A.register(F);
+        assertFalse(A.register(F));
     }
 
     @Test
-    void agency_buy_buyerAlreadyExist() {
+    void agency_register_buyerAlreadyExist() {
         Agency A = new Agency();
-        Buyer B = new Buyer("Гришка", 10, 1);
-        A.buy(B);
-        assertThrows(IllegalArgumentException.class, () -> A.buy(B));
+        FlatBuyer B = new FlatBuyer("Гришка", 10, 1);
+        A.register(B);
+        assertFalse(A.register(B));
+    }
+
+    @Test
+    void agency_unregister_noFlatExist() {
+        Agency A = new Agency();
+        Flat F = new Flat(10, 1, new FlatSeller("Lloyd"));
+        assertFalse(A.unregister(F));
+    }
+
+    @Test
+    void agency_register_noBuyerExist() {
+        Agency A = new Agency();
+        FlatBuyer B = new FlatBuyer("Гришка", 10, 1);
+        assertFalse(A.unregister(B));
     }
 
     @Test
     void agency_buy_noFlatIsCorresponding() {
         Agency A = new Agency();
-        Seller S = new Seller("Rick");
+        FlatSeller S = new FlatSeller("Rick");
         A.sell(new Flat(10, 2e1, S));
         A.sell(new Flat(15, 2e6, S));
         A.sell(new Flat(3, 1e5, S));
-        Buyer B = new Buyer("Гришка", 10, 1);
+        FlatBuyer B = new FlatBuyer("Гришка", 10, 1);
         assertTrue(A.buy(B).isEmpty());
     }
 
     @Test
     void agency_sell_noBuyerIsCorresponding() {
         Agency A = new Agency();
-        Seller S = new Seller("Rick");
-        A.buy(new Buyer("Chuck", 10, 2e1));
-        A.buy(new Buyer("Rick", 10, 2e1));
-        A.buy(new Buyer("Dick", 10, 2e1));
+        FlatSeller S = new FlatSeller("Rick");
+        A.buy(new FlatBuyer("Chuck", 10, 2e1));
+        A.buy(new FlatBuyer("Rick", 10, 2e1));
+        A.buy(new FlatBuyer("Dick", 10, 2e1));
         assertTrue(A.sell(new Flat(3, 1e5, S)).isEmpty());
     }
 
@@ -144,42 +171,68 @@ public class MediatorTest {
     @Test
     void agency_sell_normal() {
         Agency A = new Agency();
-        Seller S = new Seller("Rick");
+        FlatSeller S = new FlatSeller("Rick");
         Flat F1 = new Flat(1, 1e5, S);
         Flat F2 = new Flat(2, 1e5, S);
         Flat F3 = new Flat(3, 1e5, S);
         Flat F4 = new Flat(3, 1e4, S);
-        Buyer B = new Buyer("Ron", 3, 1e6);
-        A.sell(F1);
-        A.sell(F2);
-        A.sell(F3);
-        A.sell(F4);
-        List flats = A.buy(B);
+        FlatBuyer B = new FlatBuyer("Ron", 3, 1e6);
+        A.register(F1);
+        A.register(F2);
+        A.register(F3);
+        A.register(F4);
+        Set flats = A.buy(B);
         assertEquals(flats.size(), 2);
         assertTrue(flats.contains(F3));
         assertTrue(flats.contains(F4));
-        assertThrows(IllegalArgumentException.class, () -> A.buy(B));
     }
 
     @Test
     void agency_sell_addFlatWithExistingBuyer() {
         Agency A = new Agency();
-        Seller S = new Seller("Rick");
+        FlatSeller S = new FlatSeller("Rick");
         Flat F1 = new Flat(1, 1e5, S);
         Flat F2 = new Flat(3, 1e5, S);
         Flat F3 = new Flat(3, 1e4, S);
-        Buyer B1 = new Buyer("Ron", 3, 1e6);
-        Buyer B2 = new Buyer("John", 3, 1e7);
-        Buyer B3 = new Buyer("Willy", 4, 1e7);
-        A.sell(F1);
-        A.sell(F2);
-        A.buy(B1);
-        A.buy(B2);
-        A.buy(B3);
-        List buyers = A.sell(F3);
+        FlatBuyer B1 = new FlatBuyer("Ron", 3, 1e6);
+        FlatBuyer B2 = new FlatBuyer("John", 3, 1e7);
+        FlatBuyer B3 = new FlatBuyer("Willy", 4, 1e7);
+        A.register(F1);
+        A.register(F2);
+        A.register(B1);
+        A.register(B2);
+        A.register(B3);
+        Set buyers = A.sell(F3);
         assertEquals(buyers.size(), 2);
         assertTrue(buyers.contains(B1));
         assertTrue(buyers.contains(B2));
         assertFalse(buyers.contains(B3));
+    }
+
+    @Test
+    void agency_buyEnywhere() {
+        MetaAgency ma = new MetaAgency();
+        Agency a1 = new Agency(ma);
+        Agency a2 = new Agency(ma);
+        a1.register(new Flat(10, 1e4, new FlatSeller("Jack")));
+        a2.register(new Flat(10, 1e5, new FlatSeller("Ron")));
+        a2.register(new Flat(10, 1e7, new FlatSeller("Umi Chu")));
+        a2.register(new Flat(1, 1e7, new FlatSeller("Lao Dzun")));
+        Set set = a1.buyEnywhere(new FlatBuyer("Jimmy", 10, 1e10));
+        assertEquals(set.size(), 3);
+    }
+
+    @Test
+    void agency_sellEnywhere() {
+        MetaAgency ma = new MetaAgency();
+        Agency a1 = new Agency(ma);
+        Agency a2 = new Agency(ma);
+        a1.register(new FlatBuyer("Ron", 10, 1e5));
+        a1.register(new FlatBuyer("Chuck", 10, 1e3));
+        a2.register(new FlatBuyer("Hank", 10, 1e5));
+        a1.register(new FlatBuyer("Ron", 2, 1e10));
+        a2.register(new FlatBuyer("Ron", 10, 1e2));
+        Set set = a1.sellEnywhere(new Flat(10, 1e3, new FlatSeller("Willy")));
+        assertEquals(set.size(), 3);
     }
 }
